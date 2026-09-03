@@ -25,4 +25,4 @@ services:
       - key: DATA_DIR
         value: /data
       - key: FRONTEND_URL
-        value: https://capital-screener.vercel.app
+        value: https://frontend-snowy-two-ft3h1zkq8p.vercel.app
