@@ -1,6 +1,8 @@
 services:
   - name: capital-screener-api
     type: web
+    repo: https://github.com/abhisheksrisaai/capital-screener
+    branch: main
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
     plan: free
