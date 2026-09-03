@@ -1,0 +1,184 @@
+{
+  "companies": [
+    {
+      "id": "macpower",
+      "name": "Macpower CNC Machines Ltd",
+      "ticker": "MACPOWER",
+      "bse_code": "543763",
+      "sector": "Capital Goods",
+      "latest_revenue": 145.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "ganecos",
+      "name": "Ganesha Ecosphere Ltd",
+      "ticker": "GANECOS",
+      "bse_code": "514167",
+      "sector": "Recycling / Plastics",
+      "latest_revenue": 890.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "gandhitube",
+      "name": "Gandhi Special Tubes Ltd",
+      "ticker": "GANDHITUBE",
+      "bse_code": "513108",
+      "sector": "Steel / Tubes",
+      "latest_revenue": 312.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "krishnadef",
+      "name": "Krishna Defence and Allied Industries Ltd",
+      "ticker": "KRISHNADEF",
+      "bse_code": "544415",
+      "sector": "Defence",
+      "latest_revenue": 198.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "softtech",
+      "name": "Softtech Engineers Ltd",
+      "ticker": "SOFTTECH",
+      "bse_code": "543272",
+      "sector": "Software / Engineering",
+      "latest_revenue": 78.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "sbal",
+      "name": "Shri Bajrang Alliance Ltd",
+      "ticker": "SHRI-BAJRANG-ALLIANCE",
+      "bse_code": "532705",
+      "sector": "Steel / Metals",
+      "latest_revenue": 425.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "MEDIUM"
+    },
+    {
+      "id": "jayagrogn",
+      "name": "Jayant Agro Organics Ltd",
+      "ticker": "JAYAGROGN",
+      "bse_code": "524330",
+      "sector": "Chemicals",
+      "latest_revenue": 520.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "shivalik",
+      "name": "Shivalik Rasayan Ltd",
+      "ticker": "SHIVALIK",
+      "bse_code": "507952",
+      "sector": "Chemicals",
+      "latest_revenue": 165.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "dynemic",
+      "name": "Dynemic Products Ltd",
+      "ticker": "DYNEMIC",
+      "bse_code": "532707",
+      "sector": "Chemicals",
+      "latest_revenue": 235.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "MEDIUM"
+    },
+    {
+      "id": "nibe",
+      "name": "NIBE Ltd",
+      "ticker": "NIBE",
+      "bse_code": "535136",
+      "sector": "Defence / Aerospace",
+      "latest_revenue": 112.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "orientbell",
+      "name": "Orient Bell Ltd",
+      "ticker": "ORIENTBELL",
+      "bse_code": "530365",
+      "sector": "Building Materials",
+      "latest_revenue": 680.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "hpl",
+      "name": "HPL Electric & Power Ltd",
+      "ticker": "HPL",
+      "bse_code": "540136",
+      "sector": "Electrical Equipment",
+      "latest_revenue": 1240.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "kriti",
+      "name": "Kriti Industries India Ltd",
+      "ticker": "KRITI",
+      "bse_code": "526423",
+      "sector": "Plastics / Pipes",
+      "latest_revenue": 385.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "manaksia",
+      "name": "Manaksia Ltd",
+      "ticker": "MANAKSIA",
+      "bse_code": "532932",
+      "sector": "Metals / Aluminium",
+      "latest_revenue": 920.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "HIGH"
+    },
+    {
+      "id": "sanghi",
+      "name": "Sanghi Industries Ltd",
+      "ticker": "SANGHIIND",
+      "bse_code": "526521",
+      "sector": "Cement",
+      "latest_revenue": 1580.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "MEDIUM"
+    },
+    {
+      "id": "tirupati",
+      "name": "Tirupati Forge Ltd",
+      "ticker": "TIRUPATIFL",
+      "bse_code": "544150",
+      "sector": "Auto Components",
+      "latest_revenue": 88.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "vishnu",
+      "name": "Vishnu Chemicals Ltd",
+      "ticker": "VISHNU",
+      "bse_code": "524398",
+      "sector": "Chemicals",
+      "latest_revenue": 445.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "LOW"
+    },
+    {
+      "id": "automotive",
+      "name": "Automotive Stampings and Assemblies Ltd",
+      "ticker": "ASAL",
+      "bse_code": "520077",
+      "sector": "Auto Components",
+      "latest_revenue": 156.0,
+      "revenue_growth_pct": 5.82,
+      "risk_flag": "MEDIUM"
+    }
+  ]
+}

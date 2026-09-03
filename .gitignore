@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Environment
+.env
+backend/.env
+
+# Data
+data/raw/
+backend/qdrant_data/
+backend/data/*.db
+*.db
+
+# Node
+node_modules/
+frontend/dist/
+
+# IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Reports
+reports/
+uploads/

@@ -1,0 +1,26 @@
+services:
+  - name: capital-screener-api
+    type: web
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    disk:
+      name: screener-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: QDRANT_MODE
+        value: local
+      - key: QDRANT_LOCAL_PATH
+        value: /app/qdrant_data
+      - key: DATABASE_URL
+        value: sqlite:////app/data/screener.db
+      - key: DATA_DIR
+        value: /data
+      - key: FRONTEND_URL
+        value: https://capital-screener.vercel.app

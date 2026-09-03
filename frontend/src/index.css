@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.card {
+  @apply bg-slate-900/80 border border-slate-800 rounded-xl;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-500 text-white font-medium px-4 py-2 rounded-lg transition;
+}
+
+.btn-secondary {
+  @apply bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium px-4 py-2 rounded-lg border border-slate-700 transition;
+}
+
+.badge-low { @apply bg-emerald-500/15 text-emerald-400 px-2 py-0.5 rounded text-xs font-semibold; }
+.badge-medium { @apply bg-amber-500/15 text-amber-400 px-2 py-0.5 rounded text-xs font-semibold; }
+.badge-high { @apply bg-red-500/15 text-red-400 px-2 py-0.5 rounded text-xs font-semibold; }
+
+input, select {
+  @apply bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200;
+}
+
+table { @apply w-full text-sm; }
+th { @apply text-left text-slate-400 font-medium py-3 px-4 border-b border-slate-800; }
+td { @apply py-3 px-4 border-b border-slate-800/50; }
+tr:hover td { @apply bg-slate-900/50; }

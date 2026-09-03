@@ -1,0 +1,22 @@
+{
+  "companies": [
+    {"id": "macpower", "name": "Macpower CNC Machines Ltd", "bse_code": "543763", "screener_slug": "MACPOWER", "sector": "Capital Goods"},
+    {"id": "ganecos", "name": "Ganesha Ecosphere Ltd", "bse_code": "514167", "screener_slug": "GANECOS", "sector": "Recycling / Plastics"},
+    {"id": "gandhitube", "name": "Gandhi Special Tubes Ltd", "bse_code": "513108", "screener_slug": "GANDHITUBE", "sector": "Steel / Tubes"},
+    {"id": "krishnadef", "name": "Krishna Defence and Allied Industries Ltd", "bse_code": "544415", "screener_slug": "KRISHNADEF", "sector": "Defence"},
+    {"id": "softtech", "name": "Softtech Engineers Ltd", "bse_code": "543272", "screener_slug": "SOFTTECH", "sector": "Software / Engineering"},
+    {"id": "sbal", "name": "Shri Bajrang Alliance Ltd", "bse_code": "532705", "screener_slug": "SHRI-BAJRANG-ALLIANCE", "sector": "Steel / Metals"},
+    {"id": "jayagrogn", "name": "Jayant Agro Organics Ltd", "bse_code": "524330", "screener_slug": "JAYAGROGN", "sector": "Chemicals"},
+    {"id": "shivalik", "name": "Shivalik Rasayan Ltd", "bse_code": "507952", "screener_slug": "SHIVALIK", "sector": "Chemicals"},
+    {"id": "dynemic", "name": "Dynemic Products Ltd", "bse_code": "532707", "screener_slug": "DYNEMIC", "sector": "Chemicals"},
+    {"id": "nibe", "name": "NIBE Ltd", "bse_code": "535136", "screener_slug": "NIBE", "sector": "Defence / Aerospace"},
+    {"id": "orientbell", "name": "Orient Bell Ltd", "bse_code": "530365", "screener_slug": "ORIENTBELL", "sector": "Building Materials"},
+    {"id": "hpl", "name": "HPL Electric & Power Ltd", "bse_code": "540136", "screener_slug": "HPL", "sector": "Electrical Equipment"},
+    {"id": "kriti", "name": "Kriti Industries India Ltd", "bse_code": "526423", "screener_slug": "KRITI", "sector": "Plastics / Pipes"},
+    {"id": "manaksia", "name": "Manaksia Ltd", "bse_code": "532932", "screener_slug": "MANAKSIA", "sector": "Metals / Aluminium"},
+    {"id": "sanghi", "name": "Sanghi Industries Ltd", "bse_code": "526521", "screener_slug": "SANGHIIND", "sector": "Cement"},
+    {"id": "tirupati", "name": "Tirupati Forge Ltd", "bse_code": "544150", "screener_slug": "TIRUPATIFL", "sector": "Auto Components"},
+    {"id": "vishnu", "name": "Vishnu Chemicals Ltd", "bse_code": "524398", "screener_slug": "VISHNU", "sector": "Chemicals"},
+    {"id": "automotive", "name": "Automotive Stampings and Assemblies Ltd", "bse_code": "520077", "screener_slug": "ASAL", "sector": "Auto Components"}
+  ]
+}
