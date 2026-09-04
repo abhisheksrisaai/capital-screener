@@ -28,7 +28,7 @@ def download_pdf(url: str, dest: Path) -> bool:
 
 
 def _write_seed_pdf(company_id: str, fiscal_year: str, text: str) -> Path:
-    """Create a minimal text-based PDF placeholder using PyMuPDF."""
+    """Create a text-based PDF placeholder using PyMuPDF."""
     import fitz
 
     raw_dir = repo_root() / "data" / "raw" / company_id
@@ -36,7 +36,7 @@ def _write_seed_pdf(company_id: str, fiscal_year: str, text: str) -> Path:
     dest = raw_dir / f"{company_id}_{fiscal_year}.pdf"
     doc = fitz.open()
     page = doc.new_page()
-    page.insert_text((50, 50), text, fontsize=10)
+    page.insert_textbox(fitz.Rect(48, 48, 547, 780), text, fontsize=9, align=0)
     doc.save(str(dest))
     doc.close()
     return dest
@@ -59,9 +59,8 @@ def fetch_filings(companies_with_reports: List[Dict[str, Any]]) -> List[Dict[str
             dest = raw_dir / company["id"] / filename
 
             if url.startswith("seed://") or report.get("_seed_text"):
-                if not dest.exists():
-                    print(f"  Creating seed filing: {dest.name}")
-                    dest = _write_seed_pdf(company["id"], fiscal_year, report.get("_seed_text", ""))
+                print(f"  Writing seed filing: {dest.name}")
+                dest = _write_seed_pdf(company["id"], fiscal_year, report.get("_seed_text", ""))
             elif not dest.exists():
                 print(f"  Downloading {company['id']}: {report.get('title', url)}")
                 if not download_pdf(url, dest):

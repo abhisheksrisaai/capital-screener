@@ -53,12 +53,32 @@ def build_financials(company_id: str, profile: Dict[str, Any]) -> List[Dict[str,
 
 
 def build_filing_text(company: Dict[str, Any], fiscal_year: str) -> str:
+    profile = PROFILES.get(company["id"], {})
+    growth = profile.get("growth", 8.0)
+    de_ratio = profile.get("de_ratio", 0.8)
+    revenue = profile.get("base_revenue", 100.0)
+    sector = company.get("sector", "industrials")
+    outlook = (
+        "Management guided for continued volume growth and a measured capex plan."
+        if growth >= 8
+        else "Management is focused on cost control, working-capital discipline, and restoring growth."
+    )
+    leverage = (
+        "Net leverage remains elevated versus peers; the Board flagged refinancing and interest-cost risk."
+        if de_ratio >= 1.0
+        else "The balance sheet is conservatively geared, with debt/equity below 1.0x."
+    )
     return (
-        f"{company['name']} — {fiscal_year} Annual Report Excerpt\n"
-        f"Sector: {company['sector']}. The company operates in the Indian SME segment listed on BSE (code {company['bse_code']}). "
-        f"Management highlights continued focus on operational efficiency and capacity utilization. "
-        f"Revenue growth was driven by domestic demand and export orders. Key risks include raw material price volatility, "
-        f"working capital cycles, and regulatory changes in the {company['sector']} industry. "
-        f"The Board notes prudent capital allocation and debt management as priorities for the upcoming fiscal year. "
-        f"Auditors issued an unmodified opinion on the standalone financial statements."
+        f"{company['name']} - {fiscal_year} Annual Report (Directors' Report excerpt)\n"
+        f"Business overview. The company is a BSE-listed SME in {sector} (scrip {company.get('bse_code', '')}). "
+        f"Standalone revenue for the latest reported year was approximately Rs {revenue:.1f} crore. "
+        f"Operations remain concentrated in India, with a mix of domestic OEM/institutional demand and limited exports.\n"
+        f"Performance and outlook. Year-on-year revenue growth was about {growth:.1f}%. {outlook} "
+        f"Capacity utilization and order-book conversion were cited as the main near-term drivers. "
+        f"The Board's stated priorities for the next fiscal year are capital allocation, working-capital turns, and product-mix improvement.\n"
+        f"Key business risks. Material risks disclosed by management include: (1) raw-material and commodity price volatility in {sector}; "
+        f"(2) working-capital cycles and receivable delays from institutional customers; (3) regulatory and compliance changes applicable to listed SMEs; "
+        f"(4) customer concentration in a small number of accounts; and (5) FX and input-cost pass-through lag on export orders. {leverage}\n"
+        f"Governance. Auditors issued an unmodified opinion on the standalone financial statements. "
+        f"Related-party transactions and contingent liabilities are disclosed in the notes to accounts."
     )

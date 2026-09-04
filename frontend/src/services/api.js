@@ -8,14 +8,18 @@ const client = axios.create({
 });
 
 export function apiErrorMessage(err, fallback = 'Request failed') {
+  const status = err?.response?.status;
+  if (status === 503 || status === 504 || /status code 503/i.test(err?.message || '')) {
+    return 'Memo generation is busy — try again in a moment.';
+  }
   const data = err?.response?.data;
   if (typeof data === 'string' && data.trim()) return data;
   if (data?.detail) {
     return typeof data.detail === 'string' ? data.detail : JSON.stringify(data.detail);
   }
   if (err?.code === 'ECONNABORTED') return 'The request timed out. The API may be waking up — try again.';
-  if (err?.message === 'Network Error') return 'Could not reach the API. Check the backend or retry after a cold start.';
-  return err?.message || fallback;
+  if (err?.message === 'Network Error') return 'Could not reach the API. The backend may be waking up — retry in a few seconds.';
+  return fallback;
 }
 
 export async function getHealth() {

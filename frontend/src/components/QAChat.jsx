@@ -27,7 +27,7 @@ export default function QAChat({ companyId }) {
       setSources(result.sources || []);
       setQuestion('');
     } catch (err) {
-      setError(apiErrorMessage(err, 'Failed to get answer'));
+      setError(apiErrorMessage(err, 'Could not get an answer. Try again in a moment.'));
     } finally {
       setLoading(false);
     }
