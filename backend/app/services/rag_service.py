@@ -137,7 +137,7 @@ class RAGService:
                     "doc_title": payload.get("doc_title", ""),
                     "page": payload.get("page", 0),
                     "filing_year": payload.get("filing_year", ""),
-                    "excerpt": payload.get("text", "")[:400],
+                    "excerpt": payload.get("text", "")[:2000],
                 }
             )
         return hits

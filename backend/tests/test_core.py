@@ -2,7 +2,7 @@ import pytest
 
 from app.services.ranking_service import rank_companies
 from ingest.utils import clean_doc_title, extract_fiscal_year, parse_number, _lookup_row, _norm_label
-from ingest.seed_profiles import PROFILES, build_financials, build_filing_text
+from ingest.seed_profiles import PROFILES, build_financials, build_filing_text, build_filing_sections
 from ingest.compute_metrics import compute_risk_flag
 
 
@@ -32,13 +32,14 @@ def test_seed_growth_varies_by_company():
 
 
 def test_seed_filings_cover_risks_and_outlook():
-    text = build_filing_text(
-        {"id": "macpower", "name": "Macpower CNC Machines Ltd", "sector": "Capital Goods", "bse_code": "543763"},
-        "FY2024",
-    )
+    company = {"id": "macpower", "name": "Macpower CNC Machines Ltd", "sector": "Capital Goods", "bse_code": "543763"}
+    text = build_filing_text(company, "FY2024")
+    sections = build_filing_sections(company, "FY2024")
     assert "key business risks" in text.lower()
     assert "Directors" in text
     assert "outlook" in text.lower()
+    assert len(sections) == 4
+    assert "Key business risks" in sections[2]
 
 
 def test_ranking_is_explainable():

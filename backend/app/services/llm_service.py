@@ -75,7 +75,7 @@ class LLMService:
         for src in sources[:4]:
             context_blocks.append(
                 f"[Source: {_sanitize(str(src.get('doc_title', 'Filing')), 80)}, p.{src.get('page', '?')}]\n"
-                f"{_sanitize(str(src.get('excerpt', '')), 350)}"
+                f"{_sanitize(str(src.get('excerpt', '')), 1800)}"
             )
         context = "\n\n".join(context_blocks) or "No filing context available."
 
@@ -87,7 +87,7 @@ class LLMService:
         return self._call(system, user, max_tokens=400)
 
     def generate_thesis(self, company: Dict[str, Any], sources: List[Dict[str, Any]]) -> str:
-        context = "\n".join(_sanitize(str(s.get("excerpt", "")), 250) for s in sources[:3])
+        context = "\n".join(_sanitize(str(s.get("excerpt", "")), 800) for s in sources[:3])
         system = "Write a concise 3-4 sentence investment thesis for an internal memo. Be factual."
         user = (
             f"Company: {company.get('name')} ({company.get('sector')})\n"
@@ -98,7 +98,7 @@ class LLMService:
         return self._call(system, user, max_tokens=250)
 
     def summarize_risks(self, company: Dict[str, Any], sources: List[Dict[str, Any]]) -> str:
-        context = "\n".join(_sanitize(str(s.get("excerpt", "")), 250) for s in sources[:4])
+        context = "\n".join(_sanitize(str(s.get("excerpt", "")), 800) for s in sources[:4])
         system = "List 2-3 key investment risks as bullet points based on filings and KPIs."
         user = (
             f"Company risk flag: {company.get('risk_flag')}\n"

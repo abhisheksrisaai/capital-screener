@@ -52,12 +52,14 @@ def build_financials(company_id: str, profile: Dict[str, Any]) -> List[Dict[str,
     return rows
 
 
-def build_filing_text(company: Dict[str, Any], fiscal_year: str) -> str:
+def build_filing_sections(company: Dict[str, Any], fiscal_year: str) -> List[str]:
     profile = PROFILES.get(company["id"], {})
     growth = profile.get("growth", 8.0)
     de_ratio = profile.get("de_ratio", 0.8)
     revenue = profile.get("base_revenue", 100.0)
     sector = company.get("sector", "industrials")
+    name = company.get("name", "the company")
+    code = company.get("bse_code", "")
     outlook = (
         "Management guided for continued volume growth and a measured capex plan."
         if growth >= 8
@@ -68,17 +70,29 @@ def build_filing_text(company: Dict[str, Any], fiscal_year: str) -> str:
         if de_ratio >= 1.0
         else "The balance sheet is conservatively geared, with debt/equity below 1.0x."
     )
-    return (
-        f"{company['name']} - {fiscal_year} Annual Report (Directors' Report excerpt)\n"
-        f"Business overview. The company is a BSE-listed SME in {sector} (scrip {company.get('bse_code', '')}). "
-        f"Standalone revenue for the latest reported year was approximately Rs {revenue:.1f} crore. "
-        f"Operations remain concentrated in India, with a mix of domestic OEM/institutional demand and limited exports.\n"
-        f"Performance and outlook. Year-on-year revenue growth was about {growth:.1f}%. {outlook} "
-        f"Capacity utilization and order-book conversion were cited as the main near-term drivers. "
-        f"The Board's stated priorities for the next fiscal year are capital allocation, working-capital turns, and product-mix improvement.\n"
-        f"Key business risks. Material risks disclosed by management include: (1) raw-material and commodity price volatility in {sector}; "
-        f"(2) working-capital cycles and receivable delays from institutional customers; (3) regulatory and compliance changes applicable to listed SMEs; "
-        f"(4) customer concentration in a small number of accounts; and (5) FX and input-cost pass-through lag on export orders. {leverage}\n"
-        f"Governance. Auditors issued an unmodified opinion on the standalone financial statements. "
-        f"Related-party transactions and contingent liabilities are disclosed in the notes to accounts."
-    )
+    header = f"{name} - {fiscal_year} Annual Report (Directors' Report excerpt)"
+    return [
+        (
+            f"{header}\nBusiness overview. The company is a BSE-listed SME in {sector} (scrip {code}). "
+            f"Standalone revenue for the latest reported year was approximately Rs {revenue:.1f} crore. "
+            f"Operations remain concentrated in India, with a mix of domestic OEM/institutional demand and limited exports."
+        ),
+        (
+            f"{header}\nPerformance and outlook. Year-on-year revenue growth was about {growth:.1f}%. {outlook} "
+            f"Capacity utilization and order-book conversion were cited as the main near-term drivers. "
+            f"The Board's stated priorities for the next fiscal year are capital allocation, working-capital turns, and product-mix improvement."
+        ),
+        (
+            f"{header}\nKey business risks. Material risks disclosed by management include: (1) raw-material and commodity price volatility in {sector}; "
+            f"(2) working-capital cycles and receivable delays from institutional customers; (3) regulatory and compliance changes applicable to listed SMEs; "
+            f"(4) customer concentration in a small number of accounts; and (5) FX and input-cost pass-through lag on export orders. {leverage}"
+        ),
+        (
+            f"{header}\nGovernance. Auditors issued an unmodified opinion on the standalone financial statements. "
+            f"Related-party transactions and contingent liabilities are disclosed in the notes to accounts."
+        ),
+    ]
+
+
+def build_filing_text(company: Dict[str, Any], fiscal_year: str) -> str:
+    return "\n\n".join(build_filing_sections(company, fiscal_year))

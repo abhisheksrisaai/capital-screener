@@ -6,6 +6,7 @@ from typing import Any, Dict, List
 
 import requests
 
+from ingest.seed_profiles import build_filing_sections
 from ingest.utils import USER_AGENT, clean_doc_title, extract_fiscal_year, load_state, repo_root, sha256_file
 
 
@@ -27,16 +28,18 @@ def download_pdf(url: str, dest: Path) -> bool:
         return False
 
 
-def _write_seed_pdf(company_id: str, fiscal_year: str, text: str) -> Path:
-    """Create a text-based PDF placeholder using PyMuPDF."""
+def _write_seed_pdf(company: Dict[str, Any], fiscal_year: str) -> Path:
+    """One page per filing section so RAG retrieves risks independently."""
     import fitz
 
+    company_id = company["id"]
     raw_dir = repo_root() / "data" / "raw" / company_id
     raw_dir.mkdir(parents=True, exist_ok=True)
     dest = raw_dir / f"{company_id}_{fiscal_year}.pdf"
     doc = fitz.open()
-    page = doc.new_page()
-    page.insert_textbox(fitz.Rect(48, 48, 547, 780), text, fontsize=9, align=0)
+    for section in build_filing_sections(company, fiscal_year):
+        page = doc.new_page()
+        page.insert_textbox(fitz.Rect(48, 48, 547, 780), section, fontsize=10, align=0)
     doc.save(str(dest))
     doc.close()
     return dest
@@ -60,7 +63,7 @@ def fetch_filings(companies_with_reports: List[Dict[str, Any]]) -> List[Dict[str
 
             if url.startswith("seed://") or report.get("_seed_text"):
                 print(f"  Writing seed filing: {dest.name}")
-                dest = _write_seed_pdf(company["id"], fiscal_year, report.get("_seed_text", ""))
+                dest = _write_seed_pdf(company, fiscal_year)
             elif not dest.exists():
                 print(f"  Downloading {company['id']}: {report.get('title', url)}")
                 if not download_pdf(url, dest):
@@ -91,11 +94,8 @@ def fetch_filings(companies_with_reports: List[Dict[str, Any]]) -> List[Dict[str
             )
 
         if not any(f["company_id"] == company["id"] for f in filings_out):
-            from ingest.seed_profiles import build_filing_text
-
             for fy in ("FY2024", "FY2023"):
-                text = build_filing_text(company, fy)
-                dest = _write_seed_pdf(company["id"], fy, text)
+                dest = _write_seed_pdf(company, fy)
                 filings_out.append(
                     {
                         "company_id": company["id"],
@@ -103,7 +103,7 @@ def fetch_filings(companies_with_reports: List[Dict[str, Any]]) -> List[Dict[str
                         "fiscal_year": fy,
                         "pdf_path": str(dest.relative_to(repo_root())),
                         "pdf_hash": sha256_file(dest),
-                        "page_count": 1,
+                        "page_count": 4,
                     }
                 )
 
