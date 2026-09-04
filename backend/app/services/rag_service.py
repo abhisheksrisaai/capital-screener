@@ -2,7 +2,7 @@
 
 import json
 import logging
-import os
+import uuid
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -97,9 +97,11 @@ class RAGService:
         for i, chunk in enumerate(chunks):
             text = chunk["text"]
             embedding = self.generate_embedding(text, corpus=corpus)
-            point_id = chunk.get("point_id") or abs(hash(
-                f"{chunk['company_id']}-{chunk.get('filing_year')}-{chunk.get('page')}-{chunk.get('chunk_index')}"
-            )) % (2**63 - 1)
+            key = (
+                f"{chunk['company_id']}:{chunk.get('filing_year')}:"
+                f"{chunk.get('page')}:{chunk.get('chunk_index')}"
+            )
+            point_id = chunk.get("point_id") or str(uuid.uuid5(uuid.NAMESPACE_URL, key))
             payload = {
                 "company_id": chunk["company_id"],
                 "filing_year": chunk.get("filing_year", ""),
@@ -158,6 +160,16 @@ class RAGService:
         chunks = data.get("chunks", [])
         if not chunks:
             return 0
+        try:
+            collections = [c.name for c in self.qdrant.get_collections().collections]
+            if COLLECTION_NAME in collections:
+                self.qdrant.delete_collection(COLLECTION_NAME)
+        except Exception:
+            logger.warning("Could not reset Qdrant collection before reseed")
+        self._vectorizer = None
+        v_path = self._vectorizer_path()
+        if v_path.exists():
+            v_path.unlink()
         corpus = [c["text"] for c in chunks]
         return self.upsert_chunks(chunks, corpus=corpus)
 

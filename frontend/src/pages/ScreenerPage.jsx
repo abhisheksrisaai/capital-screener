@@ -37,6 +37,7 @@ export default function ScreenerPage() {
   const sorted = [...companies].sort((a, b) => {
     const av = a[sortKey] ?? 0;
     const bv = b[sortKey] ?? 0;
+    if (typeof av === 'string') return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
     return sortDir === 'asc' ? av - bv : bv - av;
   });
 
@@ -97,6 +98,7 @@ export default function ScreenerPage() {
                       Growth % <ArrowUpDown className="inline w-3 h-3" />
                     </th>
                     <th>Risk</th>
+                    <th>Source</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -114,6 +116,7 @@ export default function ScreenerPage() {
                         {c.revenue_growth_pct?.toFixed(1)}%
                       </td>
                       <td><RiskBadge flag={c.risk_flag} /></td>
+                      <td className="text-xs text-slate-500 uppercase">{c.data_source || 'seed'}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -123,23 +126,31 @@ export default function ScreenerPage() {
         </div>
 
         <div className="card p-4 h-fit">
-          <h2 className="font-semibold flex items-center gap-2 mb-4">
+          <h2 className="font-semibold flex items-center gap-2 mb-2">
             <TrendingUp className="w-5 h-5 text-blue-400" />
             Agent Ranking
           </h2>
+          <p className="text-xs text-slate-500 mb-4">40% growth + 30% scale + 30% risk</p>
           <div className="space-y-3">
             {ranking.slice(0, 10).map((r) => (
-              <div key={r.id} className="flex items-center gap-3">
-                <span className="text-slate-500 w-6 text-sm">#{r.rank}</span>
-                <div className="flex-1 min-w-0">
-                  <Link to={`/company/${r.id}`} className="text-sm font-medium hover:text-blue-400 truncate block">
-                    {r.name}
-                  </Link>
-                  <div className="h-1.5 bg-slate-800 rounded-full mt-1">
-                    <div className="h-full bg-blue-500 rounded-full" style={{ width: `${r.score}%` }} />
+              <div key={r.id}>
+                <div className="flex items-center gap-3">
+                  <span className="text-slate-500 w-6 text-sm">#{r.rank}</span>
+                  <div className="flex-1 min-w-0">
+                    <Link to={`/company/${r.id}`} className="text-sm font-medium hover:text-blue-400 truncate block">
+                      {r.name}
+                    </Link>
+                    <div className="h-1.5 bg-slate-800 rounded-full mt-1">
+                      <div className="h-full bg-blue-500 rounded-full" style={{ width: `${Math.min(r.score, 100)}%` }} />
+                    </div>
                   </div>
+                  <span className="text-xs text-slate-400">{r.score}</span>
                 </div>
-                <span className="text-xs text-slate-400">{r.score}</span>
+                {r.breakdown && (
+                  <p className="text-[11px] text-slate-500 ml-9 mt-1">
+                    G {r.breakdown.growth_contrib} · S {r.breakdown.scale_contrib} · R {r.breakdown.risk_contrib}
+                  </p>
+                )}
               </div>
             ))}
           </div>

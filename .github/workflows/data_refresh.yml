@@ -33,6 +33,18 @@ jobs:
           FULL_REFRESH: ${{ inputs.full_refresh || 'false' }}
         run: python -m ingest.main
 
+      - name: Guard against zero-revenue artifacts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("data/processed/companies.json").read_text())
+          zeros = sum(1 for c in data["companies"] if c.get("latest_revenue", 0) <= 0)
+          if zeros > 3:
+              raise SystemExit(f"Refusing to commit: {zeros} companies have zero revenue")
+          print(f"OK: {zeros} zero-revenue companies")
+          PY
+
       - name: Commit processed artifacts
         run: |
           git config user.name "screener-bot"

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MessageCircle, Send, Loader } from 'lucide-react';
-import { askQuestion } from '../services/api';
+import { apiErrorMessage, askQuestion } from '../services/api';
 
 const EXAMPLES = [
   'What are the key business risks mentioned in filings?',
@@ -20,13 +20,14 @@ export default function QAChat({ companyId }) {
     if (!query) return;
     setLoading(true);
     setError('');
+    setAnswer('');
     try {
       const result = await askQuestion(companyId, query);
       setAnswer(result.answer);
       setSources(result.sources || []);
       setQuestion('');
     } catch (err) {
-      setError(err.message || 'Failed to get answer');
+      setError(apiErrorMessage(err, 'Failed to get answer'));
     } finally {
       setLoading(false);
     }
@@ -41,7 +42,7 @@ export default function QAChat({ companyId }) {
 
       <div className="flex flex-wrap gap-2 mb-3">
         {EXAMPLES.map((ex) => (
-          <button key={ex} onClick={() => handleAsk(ex)} className="btn-secondary text-xs">
+          <button key={ex} onClick={() => handleAsk(ex)} className="btn-secondary text-xs" disabled={loading}>
             {ex}
           </button>
         ))}
@@ -65,7 +66,7 @@ export default function QAChat({ companyId }) {
 
       {answer && (
         <div className="mt-4 p-4 bg-slate-800/50 rounded-lg">
-          <p className="text-slate-200 leading-relaxed">{answer}</p>
+          <p className="text-slate-200 leading-relaxed whitespace-pre-wrap">{answer}</p>
           {sources.length > 0 && (
             <div className="mt-3 pt-3 border-t border-slate-700">
               <p className="text-xs text-slate-400 mb-2">Sources</p>

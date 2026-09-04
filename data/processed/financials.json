@@ -2,234 +2,234 @@
   "financials": [
     {
       "company_id": "macpower",
+      "fiscal_year": "FY2020",
+      "revenue": 73.54,
+      "pat": 7.94,
+      "ebitda": 14.29,
+      "debt_to_equity": 0.45
+    },
+    {
+      "company_id": "macpower",
+      "fiscal_year": "FY2021",
+      "revenue": 87.14,
+      "pat": 9.62,
+      "ebitda": 17.32,
+      "debt_to_equity": 0.45
+    },
+    {
+      "company_id": "macpower",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 20.0,
-      "debt_to_equity": 0.0
+      "revenue": 103.26,
+      "pat": 11.65,
+      "ebitda": 20.97,
+      "debt_to_equity": 0.45
     },
     {
       "company_id": "macpower",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 21.0,
-      "debt_to_equity": 0.0
+      "revenue": 122.36,
+      "pat": 14.1,
+      "ebitda": 25.38,
+      "debt_to_equity": 0.45
     },
     {
       "company_id": "macpower",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 35.0,
-      "debt_to_equity": 0.0
+      "revenue": 145.0,
+      "pat": 17.05,
+      "ebitda": 30.69,
+      "debt_to_equity": 0.45
     },
     {
-      "company_id": "macpower",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 42.0,
-      "debt_to_equity": 0.0
+      "company_id": "ganecos",
+      "fiscal_year": "FY2020",
+      "revenue": 559.59,
+      "pat": 40.29,
+      "ebitda": 72.52,
+      "debt_to_equity": 0.82
     },
     {
-      "company_id": "macpower",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 54.0,
-      "debt_to_equity": 0.0
+      "company_id": "ganecos",
+      "fiscal_year": "FY2021",
+      "revenue": 628.42,
+      "pat": 46.25,
+      "ebitda": 83.25,
+      "debt_to_equity": 0.82
     },
     {
       "company_id": "ganecos",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 117.0,
-      "debt_to_equity": 0.0
+      "revenue": 705.72,
+      "pat": 53.07,
+      "ebitda": 95.53,
+      "debt_to_equity": 0.82
     },
     {
       "company_id": "ganecos",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 124.0,
-      "debt_to_equity": 0.0
+      "revenue": 792.52,
+      "pat": 60.87,
+      "ebitda": 109.57,
+      "debt_to_equity": 0.82
     },
     {
       "company_id": "ganecos",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 100.0,
-      "debt_to_equity": 0.0
+      "revenue": 890.0,
+      "pat": 69.78,
+      "ebitda": 125.6,
+      "debt_to_equity": 0.82
     },
     {
-      "company_id": "ganecos",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 96.0,
-      "debt_to_equity": 0.0
+      "company_id": "gandhitube",
+      "fiscal_year": "FY2020",
+      "revenue": 223.49,
+      "pat": 20.11,
+      "ebitda": 36.2,
+      "debt_to_equity": 0.55
     },
     {
-      "company_id": "ganecos",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 60.0,
-      "debt_to_equity": 0.0
+      "company_id": "gandhitube",
+      "fiscal_year": "FY2021",
+      "revenue": 242.93,
+      "pat": 22.35,
+      "ebitda": 40.23,
+      "debt_to_equity": 0.55
     },
     {
       "company_id": "gandhitube",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 49.0,
-      "debt_to_equity": 0.0
+      "revenue": 264.06,
+      "pat": 24.82,
+      "ebitda": 44.68,
+      "debt_to_equity": 0.55
     },
     {
       "company_id": "gandhitube",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 61.0,
-      "debt_to_equity": 0.0
+      "revenue": 287.03,
+      "pat": 27.55,
+      "ebitda": 49.59,
+      "debt_to_equity": 0.55
     },
     {
       "company_id": "gandhitube",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 64.0,
-      "debt_to_equity": 0.0
+      "revenue": 312.0,
+      "pat": 30.58,
+      "ebitda": 55.04,
+      "debt_to_equity": 0.55
     },
     {
-      "company_id": "gandhitube",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 68.0,
-      "debt_to_equity": 0.0
+      "company_id": "krishnadef",
+      "fiscal_year": "FY2020",
+      "revenue": 65.03,
+      "pat": 8.19,
+      "ebitda": 14.74,
+      "debt_to_equity": 0.38
     },
     {
-      "company_id": "gandhitube",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 84.0,
-      "debt_to_equity": 0.0
+      "company_id": "krishnadef",
+      "fiscal_year": "FY2021",
+      "revenue": 85.9,
+      "pat": 11.06,
+      "ebitda": 19.91,
+      "debt_to_equity": 0.38
     },
     {
       "company_id": "krishnadef",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 7.0,
-      "debt_to_equity": 0.0
+      "revenue": 113.47,
+      "pat": 14.93,
+      "ebitda": 26.87,
+      "debt_to_equity": 0.38
     },
     {
       "company_id": "krishnadef",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 9.0,
-      "debt_to_equity": 0.0
+      "revenue": 149.89,
+      "pat": 20.15,
+      "ebitda": 36.27,
+      "debt_to_equity": 0.38
     },
     {
       "company_id": "krishnadef",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 16.0,
-      "debt_to_equity": 0.0
+      "revenue": 198.0,
+      "pat": 27.17,
+      "ebitda": 48.91,
+      "debt_to_equity": 0.38
     },
     {
-      "company_id": "krishnadef",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 31.0,
-      "debt_to_equity": 0.0
+      "company_id": "softtech",
+      "fiscal_year": "FY2020",
+      "revenue": 44.29,
+      "pat": 7.17,
+      "ebitda": 12.91,
+      "debt_to_equity": 0.22
     },
     {
-      "company_id": "krishnadef",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 53.0,
-      "debt_to_equity": 0.0
+      "company_id": "softtech",
+      "fiscal_year": "FY2021",
+      "revenue": 51.02,
+      "pat": 8.45,
+      "ebitda": 15.21,
+      "debt_to_equity": 0.22
     },
     {
       "company_id": "softtech",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 16.0,
-      "debt_to_equity": 0.0
+      "revenue": 58.78,
+      "pat": 9.95,
+      "ebitda": 17.91,
+      "debt_to_equity": 0.22
     },
     {
       "company_id": "softtech",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 21.0,
-      "debt_to_equity": 0.0
+      "revenue": 67.71,
+      "pat": 11.7,
+      "ebitda": 21.06,
+      "debt_to_equity": 0.22
     },
     {
       "company_id": "softtech",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 25.0,
-      "debt_to_equity": 0.0
-    },
-    {
-      "company_id": "softtech",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 25.0,
-      "debt_to_equity": 0.0
-    },
-    {
-      "company_id": "softtech",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 34.0,
-      "debt_to_equity": 0.0
+      "revenue": 78.0,
+      "pat": 13.76,
+      "ebitda": 24.77,
+      "debt_to_equity": 0.22
     },
     {
       "company_id": "sbal",
       "fiscal_year": "FY2020",
-      "revenue": 331.5,
-      "pat": 14.92,
-      "ebitda": 26.86,
+      "revenue": 484.04,
+      "pat": 21.78,
+      "ebitda": 39.2,
       "debt_to_equity": 1.85
     },
     {
       "company_id": "sbal",
       "fiscal_year": "FY2021",
-      "revenue": 354.88,
-      "pat": 16.32,
-      "ebitda": 29.38,
+      "revenue": 468.55,
+      "pat": 21.55,
+      "ebitda": 38.79,
       "debt_to_equity": 1.85
     },
     {
       "company_id": "sbal",
       "fiscal_year": "FY2022",
-      "revenue": 378.25,
-      "pat": 17.78,
-      "ebitda": 32.0,
+      "revenue": 453.56,
+      "pat": 21.32,
+      "ebitda": 38.38,
       "debt_to_equity": 1.85
     },
     {
       "company_id": "sbal",
       "fiscal_year": "FY2023",
-      "revenue": 401.62,
-      "pat": 19.28,
-      "ebitda": 34.7,
+      "revenue": 439.05,
+      "pat": 21.07,
+      "ebitda": 37.93,
       "debt_to_equity": 1.85
     },
     {
@@ -242,114 +242,114 @@
     },
     {
       "company_id": "jayagrogn",
+      "fiscal_year": "FY2020",
+      "revenue": 399.68,
+      "pat": 32.37,
+      "ebitda": 58.27,
+      "debt_to_equity": 0.65
+    },
+    {
+      "company_id": "jayagrogn",
+      "fiscal_year": "FY2021",
+      "revenue": 426.86,
+      "pat": 35.34,
+      "ebitda": 63.61,
+      "debt_to_equity": 0.65
+    },
+    {
+      "company_id": "jayagrogn",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 114.0,
-      "debt_to_equity": 0.0
+      "revenue": 455.89,
+      "pat": 38.57,
+      "ebitda": 69.43,
+      "debt_to_equity": 0.65
     },
     {
       "company_id": "jayagrogn",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 69.0,
-      "debt_to_equity": 0.0
+      "revenue": 486.89,
+      "pat": 42.07,
+      "ebitda": 75.73,
+      "debt_to_equity": 0.65
     },
     {
       "company_id": "jayagrogn",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 70.0,
-      "debt_to_equity": 0.0
+      "revenue": 520.0,
+      "pat": 45.86,
+      "ebitda": 82.55,
+      "debt_to_equity": 0.65
     },
     {
-      "company_id": "jayagrogn",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 97.0,
-      "debt_to_equity": 0.0
+      "company_id": "shivalik",
+      "fiscal_year": "FY2020",
+      "revenue": 73.51,
+      "pat": 7.28,
+      "ebitda": 13.1,
+      "debt_to_equity": 0.48
     },
     {
-      "company_id": "jayagrogn",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 94.0,
-      "debt_to_equity": 0.0
+      "company_id": "shivalik",
+      "fiscal_year": "FY2021",
+      "revenue": 89.98,
+      "pat": 9.11,
+      "ebitda": 16.4,
+      "debt_to_equity": 0.48
     },
     {
       "company_id": "shivalik",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 23.0,
-      "debt_to_equity": 0.0
+      "revenue": 110.13,
+      "pat": 11.39,
+      "ebitda": 20.5,
+      "debt_to_equity": 0.48
     },
     {
       "company_id": "shivalik",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 19.0,
-      "debt_to_equity": 0.0
+      "revenue": 134.8,
+      "pat": 14.23,
+      "ebitda": 25.61,
+      "debt_to_equity": 0.48
     },
     {
       "company_id": "shivalik",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 17.0,
-      "debt_to_equity": 0.0
-    },
-    {
-      "company_id": "shivalik",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 26.0,
-      "debt_to_equity": 0.0
-    },
-    {
-      "company_id": "shivalik",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 26.0,
-      "debt_to_equity": 0.0
+      "revenue": 165.0,
+      "pat": 17.79,
+      "ebitda": 32.02,
+      "debt_to_equity": 0.48
     },
     {
       "company_id": "dynemic",
       "fiscal_year": "FY2020",
-      "revenue": 183.3,
-      "pat": 11.55,
-      "ebitda": 20.79,
+      "revenue": 200.11,
+      "pat": 12.61,
+      "ebitda": 22.7,
       "debt_to_equity": 1.12
     },
     {
       "company_id": "dynemic",
       "fiscal_year": "FY2021",
-      "revenue": 196.23,
-      "pat": 12.64,
-      "ebitda": 22.75,
+      "revenue": 208.31,
+      "pat": 13.42,
+      "ebitda": 24.16,
       "debt_to_equity": 1.12
     },
     {
       "company_id": "dynemic",
       "fiscal_year": "FY2022",
-      "revenue": 209.15,
-      "pat": 13.76,
-      "ebitda": 24.77,
+      "revenue": 216.85,
+      "pat": 14.27,
+      "ebitda": 25.69,
       "debt_to_equity": 1.12
     },
     {
       "company_id": "dynemic",
       "fiscal_year": "FY2023",
-      "revenue": 222.08,
-      "pat": 14.92,
-      "ebitda": 26.86,
+      "revenue": 225.74,
+      "pat": 15.17,
+      "ebitda": 27.31,
       "debt_to_equity": 1.12
     },
     {
@@ -362,363 +362,363 @@
     },
     {
       "company_id": "nibe",
+      "fiscal_year": "FY2020",
+      "revenue": 40.95,
+      "pat": 5.9,
+      "ebitda": 10.62,
+      "debt_to_equity": 0.31
+    },
+    {
+      "company_id": "nibe",
+      "fiscal_year": "FY2021",
+      "revenue": 52.66,
+      "pat": 7.75,
+      "ebitda": 13.95,
+      "debt_to_equity": 0.31
+    },
+    {
+      "company_id": "nibe",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 2.0,
-      "debt_to_equity": 0.0
+      "revenue": 67.72,
+      "pat": 10.19,
+      "ebitda": 18.34,
+      "debt_to_equity": 0.31
     },
     {
       "company_id": "nibe",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 12.0,
-      "debt_to_equity": 0.0
+      "revenue": 87.09,
+      "pat": 13.38,
+      "ebitda": 24.08,
+      "debt_to_equity": 0.31
     },
     {
       "company_id": "nibe",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 37.0,
-      "debt_to_equity": 0.0
+      "revenue": 112.0,
+      "pat": 17.56,
+      "ebitda": 31.61,
+      "debt_to_equity": 0.31
     },
     {
-      "company_id": "nibe",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 59.0,
-      "debt_to_equity": 0.0
+      "company_id": "orientbell",
+      "fiscal_year": "FY2020",
+      "revenue": 472.99,
+      "pat": 25.54,
+      "ebitda": 45.97,
+      "debt_to_equity": 0.72
     },
     {
-      "company_id": "nibe",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 54.0,
-      "debt_to_equity": 0.0
+      "company_id": "orientbell",
+      "fiscal_year": "FY2021",
+      "revenue": 517.92,
+      "pat": 28.59,
+      "ebitda": 51.46,
+      "debt_to_equity": 0.72
     },
     {
       "company_id": "orientbell",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 57.0,
-      "debt_to_equity": 0.0
+      "revenue": 567.12,
+      "pat": 31.99,
+      "ebitda": 57.58,
+      "debt_to_equity": 0.72
     },
     {
       "company_id": "orientbell",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 47.0,
-      "debt_to_equity": 0.0
+      "revenue": 621.0,
+      "pat": 35.77,
+      "ebitda": 64.39,
+      "debt_to_equity": 0.72
     },
     {
       "company_id": "orientbell",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 21.0,
-      "debt_to_equity": 0.0
+      "revenue": 680.0,
+      "pat": 39.98,
+      "ebitda": 71.96,
+      "debt_to_equity": 0.72
     },
     {
-      "company_id": "orientbell",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 28.0,
-      "debt_to_equity": 0.0
+      "company_id": "hpl",
+      "fiscal_year": "FY2020",
+      "revenue": 810.97,
+      "pat": 36.49,
+      "ebitda": 65.68,
+      "debt_to_equity": 0.88
     },
     {
-      "company_id": "orientbell",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 39.0,
-      "debt_to_equity": 0.0
+      "company_id": "hpl",
+      "fiscal_year": "FY2021",
+      "revenue": 901.8,
+      "pat": 41.48,
+      "ebitda": 74.66,
+      "debt_to_equity": 0.88
     },
     {
       "company_id": "hpl",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 116.0,
-      "debt_to_equity": 0.0
+      "revenue": 1002.8,
+      "pat": 47.13,
+      "ebitda": 84.83,
+      "debt_to_equity": 0.88
     },
     {
       "company_id": "hpl",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 145.0,
-      "debt_to_equity": 0.0
+      "revenue": 1115.11,
+      "pat": 53.53,
+      "ebitda": 96.35,
+      "debt_to_equity": 0.88
     },
     {
       "company_id": "hpl",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 182.0,
-      "debt_to_equity": 0.0
+      "revenue": 1240.0,
+      "pat": 60.76,
+      "ebitda": 109.37,
+      "debt_to_equity": 0.88
     },
     {
-      "company_id": "hpl",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 238.0,
-      "debt_to_equity": 0.0
+      "company_id": "kriti",
+      "fiscal_year": "FY2020",
+      "revenue": 290.45,
+      "pat": 20.91,
+      "ebitda": 37.64,
+      "debt_to_equity": 0.95
     },
     {
-      "company_id": "hpl",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 264.0,
-      "debt_to_equity": 0.0
+      "company_id": "kriti",
+      "fiscal_year": "FY2021",
+      "revenue": 311.65,
+      "pat": 22.94,
+      "ebitda": 41.29,
+      "debt_to_equity": 0.95
     },
     {
       "company_id": "kriti",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 39.0,
-      "debt_to_equity": 0.0
+      "revenue": 334.4,
+      "pat": 25.15,
+      "ebitda": 45.27,
+      "debt_to_equity": 0.95
     },
     {
       "company_id": "kriti",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": -8.0,
-      "debt_to_equity": 0.0
+      "revenue": 358.81,
+      "pat": 27.56,
+      "ebitda": 49.61,
+      "debt_to_equity": 0.95
     },
     {
       "company_id": "kriti",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 59.0,
-      "debt_to_equity": 0.0
+      "revenue": 385.0,
+      "pat": 30.18,
+      "ebitda": 54.32,
+      "debt_to_equity": 0.95
     },
     {
-      "company_id": "kriti",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 28.0,
-      "debt_to_equity": 0.0
+      "company_id": "manaksia",
+      "fiscal_year": "FY2020",
+      "revenue": 977.33,
+      "pat": 35.18,
+      "ebitda": 63.32,
+      "debt_to_equity": 2.15
     },
     {
-      "company_id": "kriti",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 35.0,
-      "debt_to_equity": 0.0
+      "company_id": "manaksia",
+      "fiscal_year": "FY2021",
+      "revenue": 962.67,
+      "pat": 35.43,
+      "ebitda": 63.77,
+      "debt_to_equity": 2.15
     },
     {
       "company_id": "manaksia",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": -1.0,
-      "debt_to_equity": 0.0
+      "revenue": 948.23,
+      "pat": 35.65,
+      "ebitda": 64.17,
+      "debt_to_equity": 2.15
     },
     {
       "company_id": "manaksia",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 6.0,
-      "debt_to_equity": 0.0
+      "revenue": 934.01,
+      "pat": 35.87,
+      "ebitda": 64.57,
+      "debt_to_equity": 2.15
     },
     {
       "company_id": "manaksia",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 5.0,
-      "debt_to_equity": 0.0
+      "revenue": 920.0,
+      "pat": 36.06,
+      "ebitda": 64.91,
+      "debt_to_equity": 2.15
     },
     {
-      "company_id": "manaksia",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": -1.0,
-      "debt_to_equity": 0.0
-    },
-    {
-      "company_id": "manaksia",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 2.0,
-      "debt_to_equity": 0.0
+      "company_id": "sanghi",
+      "fiscal_year": "FY2020",
+      "revenue": 1290.01,
+      "pat": 34.83,
+      "ebitda": 62.69,
+      "debt_to_equity": 1.45
     },
     {
       "company_id": "sanghi",
       "fiscal_year": "FY2021",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 154.0,
-      "debt_to_equity": 0.0
+      "revenue": 1357.09,
+      "pat": 37.46,
+      "ebitda": 67.43,
+      "debt_to_equity": 1.45
     },
     {
       "company_id": "sanghi",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 193.0,
-      "debt_to_equity": 0.0
+      "revenue": 1427.66,
+      "pat": 40.26,
+      "ebitda": 72.47,
+      "debt_to_equity": 1.45
     },
     {
       "company_id": "sanghi",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 244.0,
-      "debt_to_equity": 0.0
+      "revenue": 1501.9,
+      "pat": 43.25,
+      "ebitda": 77.85,
+      "debt_to_equity": 1.45
     },
     {
       "company_id": "sanghi",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 192.0,
-      "debt_to_equity": 0.0
+      "revenue": 1580.0,
+      "pat": 46.45,
+      "ebitda": 83.61,
+      "debt_to_equity": 1.45
     },
     {
-      "company_id": "sanghi",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": -14.0,
-      "debt_to_equity": 0.0
+      "company_id": "tirupati",
+      "fiscal_year": "FY2020",
+      "revenue": 36.27,
+      "pat": 4.24,
+      "ebitda": 7.63,
+      "debt_to_equity": 0.52
+    },
+    {
+      "company_id": "tirupati",
+      "fiscal_year": "FY2021",
+      "revenue": 45.27,
+      "pat": 5.41,
+      "ebitda": 9.74,
+      "debt_to_equity": 0.52
     },
     {
       "company_id": "tirupati",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 11.0,
-      "debt_to_equity": 0.0
+      "revenue": 56.5,
+      "pat": 6.9,
+      "ebitda": 12.42,
+      "debt_to_equity": 0.52
     },
     {
       "company_id": "tirupati",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 15.0,
-      "debt_to_equity": 0.0
+      "revenue": 70.51,
+      "pat": 8.8,
+      "ebitda": 15.84,
+      "debt_to_equity": 0.52
     },
     {
       "company_id": "tirupati",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 13.0,
-      "debt_to_equity": 0.0
+      "revenue": 88.0,
+      "pat": 11.21,
+      "ebitda": 20.18,
+      "debt_to_equity": 0.52
     },
     {
-      "company_id": "tirupati",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 15.0,
-      "debt_to_equity": 0.0
+      "company_id": "vishnu",
+      "fiscal_year": "FY2020",
+      "revenue": 258.0,
+      "pat": 23.22,
+      "ebitda": 41.8,
+      "debt_to_equity": 0.58
     },
     {
-      "company_id": "tirupati",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 16.0,
-      "debt_to_equity": 0.0
+      "company_id": "vishnu",
+      "fiscal_year": "FY2021",
+      "revenue": 295.67,
+      "pat": 27.2,
+      "ebitda": 48.96,
+      "debt_to_equity": 0.58
     },
     {
       "company_id": "vishnu",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 127.0,
-      "debt_to_equity": 0.0
+      "revenue": 338.84,
+      "pat": 31.85,
+      "ebitda": 57.33,
+      "debt_to_equity": 0.58
     },
     {
       "company_id": "vishnu",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 209.0,
-      "debt_to_equity": 0.0
+      "revenue": 388.31,
+      "pat": 37.28,
+      "ebitda": 67.1,
+      "debt_to_equity": 0.58
     },
     {
       "company_id": "vishnu",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 158.0,
-      "debt_to_equity": 0.0
+      "revenue": 445.0,
+      "pat": 43.61,
+      "ebitda": 78.5,
+      "debt_to_equity": 0.58
     },
     {
-      "company_id": "vishnu",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 145.0,
-      "debt_to_equity": 0.0
+      "company_id": "automotive",
+      "fiscal_year": "FY2020",
+      "revenue": 134.38,
+      "pat": 7.26,
+      "ebitda": 13.07,
+      "debt_to_equity": 1.35
     },
     {
-      "company_id": "vishnu",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 142.0,
-      "debt_to_equity": 0.0
+      "company_id": "automotive",
+      "fiscal_year": "FY2021",
+      "revenue": 139.49,
+      "pat": 7.7,
+      "ebitda": 13.86,
+      "debt_to_equity": 1.35
     },
     {
       "company_id": "automotive",
       "fiscal_year": "FY2022",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 16.0,
-      "debt_to_equity": 0.0
+      "revenue": 144.79,
+      "pat": 8.17,
+      "ebitda": 14.71,
+      "debt_to_equity": 1.35
     },
     {
       "company_id": "automotive",
       "fiscal_year": "FY2023",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 33.0,
-      "debt_to_equity": 0.0
+      "revenue": 150.29,
+      "pat": 8.66,
+      "ebitda": 15.59,
+      "debt_to_equity": 1.35
     },
     {
       "company_id": "automotive",
       "fiscal_year": "FY2024",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 51.0,
-      "debt_to_equity": 0.0
-    },
-    {
-      "company_id": "automotive",
-      "fiscal_year": "FY2025",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 48.0,
-      "debt_to_equity": 0.0
-    },
-    {
-      "company_id": "automotive",
-      "fiscal_year": "FY2026",
-      "revenue": 0,
-      "pat": 0,
-      "ebitda": 58.0,
-      "debt_to_equity": 0.0
+      "revenue": 156.0,
+      "pat": 9.17,
+      "ebitda": 16.51,
+      "debt_to_equity": 1.35
     }
   ]
 }

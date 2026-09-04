@@ -19,6 +19,7 @@ class Company(Base):
     latest_revenue: Mapped[float] = mapped_column(Float, default=0.0)
     revenue_growth_pct: Mapped[float] = mapped_column(Float, default=0.0)
     risk_flag: Mapped[str] = mapped_column(String(16), default="MEDIUM")
+    data_source: Mapped[str] = mapped_column(String(16), default="seed")
     updated_at: Mapped[datetime] = mapped_column(
         DateTime, default=lambda: datetime.now(timezone.utc)
     )

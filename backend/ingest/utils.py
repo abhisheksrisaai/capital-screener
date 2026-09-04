@@ -60,19 +60,56 @@ def parse_number(text: str) -> float:
     if not text:
         return 0.0
     cleaned = text.replace(",", "").replace("₹", "").replace("%", "").strip()
-    if cleaned in ("-", "", "—"):
+    if cleaned in ("-", "", "—", "NA", "n/a"):
         return 0.0
+    negative = False
+    if cleaned.startswith("(") and cleaned.endswith(")"):
+        negative = True
+        cleaned = cleaned[1:-1].strip()
     multiplier = 1.0
     if cleaned.endswith("Cr"):
-        multiplier = 1.0
         cleaned = cleaned.replace("Cr", "").strip()
     elif cleaned.endswith("L"):
         multiplier = 0.01
         cleaned = cleaned.replace("L", "").strip()
     try:
-        return float(cleaned) * multiplier
+        value = float(cleaned) * multiplier
+        return -value if negative else value
     except ValueError:
         return 0.0
+
+
+def _norm_label(label: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", (label or "").lower()).strip()
+
+
+def _lookup_row(data_rows: Dict[str, Dict[str, float]], *candidates: str) -> Dict[str, float]:
+    for key, vals in data_rows.items():
+        nk = _norm_label(key)
+        for cand in candidates:
+            if nk == cand or nk.startswith(cand + " "):
+                return vals
+    return {}
+
+
+def extract_fiscal_year(title: str, fallback: str) -> str:
+    text = title or ""
+    match = re.search(r"(20\d{2})\s*[-–/]\s*(\d{2,4})", text)
+    if match:
+        return f"FY{match.group(1)}"
+    match = re.search(r"FY\s*(20\d{2})", text, re.I)
+    if match:
+        return f"FY{match.group(1)}"
+    match = re.search(r"(20\d{2})", text)
+    if match:
+        return f"FY{match.group(1)}"
+    return fallback
+
+
+def clean_doc_title(title: str) -> str:
+    text = re.sub(r"from\s+nse", "", title or "", flags=re.I)
+    text = re.sub(r"from\s+bse", "", text, flags=re.I)
+    return re.sub(r"\s+", " ", text).strip(" -") or "Annual Report"
 
 
 def parse_screener_financials(slug: str) -> Dict[str, Any]:
@@ -100,7 +137,7 @@ def parse_screener_financials(slug: str) -> Dict[str, Any]:
             cells = row.find_all(["td", "th"])
             if not cells:
                 continue
-            label = cells[0].get_text(strip=True).lower()
+            label = cells[0].get_text(strip=True)
             data_rows[label] = {
                 years[i]: parse_number(cells[i + 1].get_text(strip=True))
                 for i in range(min(len(years), len(cells) - 1))
@@ -108,9 +145,12 @@ def parse_screener_financials(slug: str) -> Dict[str, Any]:
 
         for year in years[-5:]:
             fin_year = year.replace("Mar ", "FY")
-            revenue = data_rows.get("sales", {}).get(year, 0) or data_rows.get("revenue", {}).get(year, 0)
-            pat = data_rows.get("net profit", {}).get(year, 0) or data_rows.get("pat", {}).get(year, 0)
-            ebitda = data_rows.get("operating profit", {}).get(year, 0) or data_rows.get("ebitda", {}).get(year, 0)
+            sales = _lookup_row(data_rows, "sales", "revenue")
+            pat_row = _lookup_row(data_rows, "net profit", "pat", "profit after tax")
+            ebitda_row = _lookup_row(data_rows, "operating profit", "ebitda", "opm")
+            revenue = sales.get(year, 0)
+            pat = pat_row.get(year, 0)
+            ebitda = ebitda_row.get(year, 0)
             financials.append(
                 {
                     "fiscal_year": fin_year,
@@ -148,6 +188,6 @@ def parse_screener_financials(slug: str) -> Dict[str, Any]:
             if "annual" in title.lower() or "report" in title.lower():
                 if href.startswith("/"):
                     href = f"https://www.screener.in{href}"
-                annual_reports.append({"title": title, "url": href})
+                annual_reports.append({"title": clean_doc_title(title), "url": href})
 
     return {"sector": sector, "financials": financials, "annual_reports": annual_reports[:3]}

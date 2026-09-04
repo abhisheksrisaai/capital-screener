@@ -1,8 +1,9 @@
 """FastAPI routes for companies, ranking, Q&A, and memos."""
 
-from typing import List, Optional
+import logging
+from typing import Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
@@ -14,6 +15,7 @@ from app.services.ranking_service import rank_companies
 from app.services.rag_service import rag_service
 from app.services.report_generator import memo_generator
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api")
 
 
@@ -31,6 +33,7 @@ def _company_dict(c: Company) -> dict:
         "latest_revenue": c.latest_revenue,
         "revenue_growth_pct": c.revenue_growth_pct,
         "risk_flag": c.risk_flag,
+        "data_source": getattr(c, "data_source", "seed"),
     }
 
 
@@ -136,14 +139,23 @@ def ask_company(company_id: str, body: AskRequest, db: Session = Depends(get_db)
     if not company:
         raise HTTPException(status_code=404, detail="Company not found")
 
-    sources = rag_service.search(company_id, body.question, top_k=5)
+    try:
+        sources = rag_service.search(company_id, body.question, top_k=5)
+    except Exception as exc:
+        logger.exception("RAG search failed for %s", company_id)
+        raise HTTPException(status_code=503, detail=f"Search unavailable: {exc}") from exc
+
     if not sources:
         return {
-            "answer": "No filing data indexed for this company yet. Run the ingestion pipeline.",
+            "answer": "Filings for this company are still being processed. Try another company or check back after the next data refresh.",
             "sources": [],
         }
 
-    answer = llm_service.answer_question(body.question, sources)
+    try:
+        answer = llm_service.answer_question(body.question, sources)
+    except Exception as exc:
+        logger.exception("Groq Q&A failed for %s", company_id)
+        raise HTTPException(status_code=503, detail=f"AI answer unavailable: {exc}") from exc
     return {"answer": answer, "sources": sources}
 
 
@@ -157,18 +169,21 @@ def generate_memo(company_id: str, db: Session = Depends(get_db)):
     ranked = rank_companies([company_dict])
     score = ranked[0]["score"] if ranked else 0
 
-    sources = rag_service.search(company_id, "business risks growth strategy financial outlook", top_k=4)
-    thesis = llm_service.generate_thesis(company_dict, sources)
-    risks = llm_service.summarize_risks(company_dict, sources)
-
-    pdf_bytes = memo_generator.generate_memo(
-        {
-            "company": company_dict,
-            "score": score,
-            "thesis": thesis,
-            "risks": risks,
-        }
-    )
+    try:
+        sources = rag_service.search(company_id, "business risks growth strategy financial outlook", top_k=4)
+        thesis = llm_service.generate_thesis(company_dict, sources)
+        risks = llm_service.summarize_risks(company_dict, sources)
+        pdf_bytes = memo_generator.generate_memo(
+            {
+                "company": company_dict,
+                "score": score,
+                "thesis": thesis,
+                "risks": risks,
+            }
+        )
+    except Exception as exc:
+        logger.exception("Memo generation failed for %s", company_id)
+        raise HTTPException(status_code=503, detail=f"Memo generation failed: {exc}") from exc
 
     filename = f"{company_id}_memo.pdf"
     media_type = "application/pdf" if pdf_bytes[:4] == b"%PDF" else "text/html"

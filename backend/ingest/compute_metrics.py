@@ -34,6 +34,8 @@ def compute_risk_flag(company: Dict[str, Any], financials: List[Dict[str, Any]])
 def apply_risk_flags(companies: List[Dict[str, Any]], financials: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     for company in companies:
         company["risk_flag"] = compute_risk_flag(company, financials)
+        if not company.get("data_source"):
+            company["data_source"] = "seed" if company.pop("_seed_mode", False) else "real"
         for key in ("_financials", "_annual_reports", "_seed_mode"):
             company.pop(key, None)
     return companies

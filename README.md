@@ -4,8 +4,18 @@ Internal tool for screening 15–20 BSE-listed Indian SMEs, querying filings via
 
 ## Live Demo
 
-- **Dashboard:** Deploy frontend to Vercel with `VITE_API_URL` pointing to your Render backend
-- **API:** Deploy backend via Render Blueprint (`render.yaml`)
+- **Dashboard:** https://frontend-snowy-two-ft3h1zkq8p.vercel.app
+- **API:** https://capital-screener-api.onrender.com/api/health
+
+Render free-tier APIs cold-start; the first request after idle can take ~30 seconds.
+
+## Data honesty
+
+The pipeline **tries Screener.in first**. If a scrape is blocked, returns empty tables, or maps revenue as 0, that company is filled from a **seed profile** derived from public BSE SME filings (approximate). Each company has a `data_source` of `real`, `hybrid`, or `seed`, shown in the dashboard.
+
+Embeddings are **TF-IDF (384-d)**, not sentence-transformers — chosen to stay inside Render's RAM limits. The `EMBEDDING_MODEL` setting documents that choice.
+
+Q&A and memos use Groq with a fallback model chain (`llama-3.1-8b-instant`, then larger models) so a single decommissioned model name does not 500 the demo.
 
 ## Architecture
 
@@ -95,7 +105,7 @@ Risk flags are rule-based:
 | LLM | Groq vs OpenAI | **Groq** | Fast inference, generous free tier, sufficient for Q&A and memo drafts |
 | Dashboard | Custom React vs Retool | **Custom React** | Full screening UX control; reuses ContractGuard patterns; no per-seat cost |
 | Structured DB | Postgres vs SQLite | **SQLite** | 18-company universe fits file DB; zero infra; Postgres upgrade path documented |
-| Data source | Mock vs real | **Real (Screener + BSE)** | Live scrape via GitHub Actions; processed JSON fallback for reliable deploys |
+| Data source | Mock vs real | **Screener first, seed fallback** | Live scrape is the happy path; committed JSON + seed profiles keep the demo up when Screener/BSE block CI |
 
 ## Data Refresh
 
@@ -124,8 +134,8 @@ capital-screener/
 
 ### Vercel (Frontend)
 
-1. Import repo, set root to `frontend/`
-2. Set env `VITE_API_URL=https://your-render-api.onrender.com`
+1. Import repo, set **Root Directory** to `frontend/` (so `frontend/vercel.json` SPA rewrites apply)
+2. Set env `VITE_API_URL=https://capital-screener-api.onrender.com`
 3. Deploy
 
 ## License

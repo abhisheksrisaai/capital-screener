@@ -35,28 +35,30 @@ def seed_from_processed(db: Session) -> dict:
         logger.warning("No processed companies.json found — database will be empty.")
         return {"companies": 0, "financials": 0, "filings": 0, "chunks": 0}
 
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+
     company_count = 0
     for row in companies_data["companies"]:
-        existing = db.get(Company, row["id"])
-        clean = {k: v for k, v in row.items() if not k.startswith("_")}
-        if existing:
-            for key in ("name", "ticker", "bse_code", "sector", "latest_revenue", "revenue_growth_pct", "risk_flag"):
-                setattr(existing, key, clean[key])
-            existing.updated_at = datetime.now(timezone.utc)
-        else:
-            db.add(Company(**clean))
+        clean = {k: v for k, v in row.items() if not k.startswith("_") and k in {
+            "id", "name", "ticker", "bse_code", "sector",
+            "latest_revenue", "revenue_growth_pct", "risk_flag", "data_source",
+        }}
+        clean.setdefault("data_source", "seed")
+        clean["updated_at"] = datetime.now(timezone.utc)
+        db.add(Company(**clean))
         company_count += 1
 
-    db.query(Financial).delete()
     fin_count = 0
+    allowed_fin = {"company_id", "fiscal_year", "revenue", "ebitda", "pat", "debt_to_equity"}
     for row in financials_data.get("financials", []):
-        db.add(Financial(**row))
+        db.add(Financial(**{k: v for k, v in row.items() if k in allowed_fin}))
         fin_count += 1
 
-    db.query(Filing).delete()
     fil_count = 0
+    allowed_fil = {"company_id", "title", "fiscal_year", "pdf_path", "pdf_hash", "page_count"}
     for row in filings_data.get("filings", []):
-        db.add(Filing(**row))
+        db.add(Filing(**{k: v for k, v in row.items() if k in allowed_fil}))
         fil_count += 1
 
     db.commit()
@@ -67,6 +69,7 @@ def seed_from_processed(db: Session) -> dict:
         "financials": fin_count,
         "filings": fil_count,
         "chunks": chunk_count,
+        "seeded": True,
     }
 
 
@@ -74,14 +77,7 @@ def seed_if_empty() -> dict:
     init_db()
     db = SessionLocal()
     try:
-        count = db.query(Company).count()
-        if count == 0:
-            logger.info("Database empty — seeding from processed artifacts...")
-            return seed_from_processed(db)
-        chunk_count = rag_service.count_chunks()
-        if chunk_count == 0:
-            manifest = settings.data_dir / "processed" / "chunks_manifest.json"
-            chunk_count = rag_service.load_chunks_from_manifest(manifest)
-        return {"companies": count, "chunks": chunk_count, "seeded": False}
+        logger.info("Reseeding database from processed artifacts...")
+        return seed_from_processed(db)
     finally:
         db.close()

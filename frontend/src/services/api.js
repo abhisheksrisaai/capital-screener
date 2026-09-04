@@ -4,8 +4,19 @@ const API_URL = import.meta.env.VITE_API_URL || '';
 
 const client = axios.create({
   baseURL: API_URL,
-  timeout: 60000,
+  timeout: 90000,
 });
+
+export function apiErrorMessage(err, fallback = 'Request failed') {
+  const data = err?.response?.data;
+  if (typeof data === 'string' && data.trim()) return data;
+  if (data?.detail) {
+    return typeof data.detail === 'string' ? data.detail : JSON.stringify(data.detail);
+  }
+  if (err?.code === 'ECONNABORTED') return 'The request timed out. The API may be waking up — try again.';
+  if (err?.message === 'Network Error') return 'Could not reach the API. Check the backend or retry after a cold start.';
+  return err?.message || fallback;
+}
 
 export async function getHealth() {
   const { data } = await client.get('/api/health');
@@ -44,5 +55,11 @@ export async function askQuestion(id, question) {
 
 export async function downloadMemo(id) {
   const response = await client.post(`/api/companies/${id}/memo`, {}, { responseType: 'blob' });
+  const type = response.headers['content-type'] || '';
+  if (type.includes('application/json')) {
+    const text = await response.data.text();
+    const parsed = JSON.parse(text);
+    throw new Error(parsed.detail || 'Memo generation failed');
+  }
   return response;
 }

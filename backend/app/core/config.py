@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     model_config = ConfigDict(env_file=str(ENV_PATH), env_file_encoding="utf-8", case_sensitive=True)
 
     GROQ_API_KEY: str = ""
-    GROQ_MODEL: str = "llama-3.3-70b-versatile"
+    GROQ_MODEL: str = "llama-3.1-8b-instant"
 
     QDRANT_MODE: str = "local"
     QDRANT_HOST: str = "localhost"
@@ -23,7 +23,7 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str = "sqlite:///./data/screener.db"
     DATA_DIR: str = ""
-    EMBEDDING_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
+    EMBEDDING_MODEL: str = "tfidf-384"
 
     APP_DEBUG: bool = True
     APP_PORT: int = 8000

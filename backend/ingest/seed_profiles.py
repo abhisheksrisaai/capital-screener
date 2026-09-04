@@ -27,11 +27,18 @@ PROFILES: Dict[str, Dict[str, Any]] = {
 
 def build_financials(company_id: str, profile: Dict[str, Any]) -> List[Dict[str, Any]]:
     rows = []
-    base = profile["base_revenue"]
-    for i, year in enumerate(range(2020, 2025)):
-        factor = 0.78 + i * 0.055
-        revenue = round(base * factor, 2)
-        pat = round(revenue * profile["margin"] * (0.9 + i * 0.02), 2)
+    growth = profile.get("growth", 8.0) / 100.0
+    latest = float(profile["base_revenue"])
+    years = list(range(2020, 2025))
+    revenues = [latest]
+    for _ in range(len(years) - 1):
+        prev = revenues[0] / (1 + growth) if growth > -0.99 else revenues[0]
+        revenues.insert(0, round(prev, 2))
+    revenues[-1] = latest
+    for i, year in enumerate(years):
+        revenue = round(revenues[i], 2)
+        margin = profile["margin"] * (0.9 + i * 0.02)
+        pat = round(revenue * margin, 2)
         ebitda = round(pat * 1.8, 2)
         rows.append(
             {
