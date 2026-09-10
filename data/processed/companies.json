@@ -115,44 +115,44 @@
       "name": "Orient Bell Ltd",
       "ticker": "ORIENTBELL",
       "bse_code": "530365",
-      "sector": "Consumer Discretionary",
-      "latest_revenue": 683.0,
-      "revenue_growth_pct": 3.48,
-      "risk_flag": "MEDIUM",
-      "data_source": "real"
+      "sector": "Building Materials",
+      "latest_revenue": 680.0,
+      "revenue_growth_pct": 9.5,
+      "risk_flag": "LOW",
+      "data_source": "seed"
     },
     {
       "id": "hpl",
       "name": "HPL Electric & Power Ltd",
       "ticker": "HPL",
       "bse_code": "540136",
-      "sector": "Industrials",
-      "latest_revenue": 1858.0,
-      "revenue_growth_pct": 10.33,
+      "sector": "Electrical Equipment",
+      "latest_revenue": 1240.0,
+      "revenue_growth_pct": 11.2,
       "risk_flag": "LOW",
-      "data_source": "real"
+      "data_source": "seed"
     },
     {
       "id": "kriti",
       "name": "Kriti Industries India Ltd",
       "ticker": "KRITI",
       "bse_code": "526423",
-      "sector": "Industrials",
-      "latest_revenue": 587.0,
-      "revenue_growth_pct": -18.7,
-      "risk_flag": "HIGH",
-      "data_source": "real"
+      "sector": "Plastics / Pipes",
+      "latest_revenue": 385.0,
+      "revenue_growth_pct": 7.3,
+      "risk_flag": "LOW",
+      "data_source": "seed"
     },
     {
       "id": "manaksia",
       "name": "Manaksia Ltd",
       "ticker": "MANAKSIA",
       "bse_code": "532932",
-      "sector": "Industrials",
-      "latest_revenue": 173.0,
-      "revenue_growth_pct": 4.22,
+      "sector": "Metals / Aluminium",
+      "latest_revenue": 920.0,
+      "revenue_growth_pct": -1.5,
       "risk_flag": "HIGH",
-      "data_source": "real"
+      "data_source": "seed"
     },
     {
       "id": "sanghi",
