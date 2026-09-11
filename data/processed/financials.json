@@ -402,163 +402,163 @@
     },
     {
       "company_id": "orientbell",
-      "fiscal_year": "FY2020",
-      "revenue": 472.99,
-      "pat": 25.54,
-      "ebitda": 45.97,
-      "debt_to_equity": 0.72
-    },
-    {
-      "company_id": "orientbell",
-      "fiscal_year": "FY2021",
-      "revenue": 517.92,
-      "pat": 28.59,
-      "ebitda": 51.46,
-      "debt_to_equity": 0.72
-    },
-    {
-      "company_id": "orientbell",
       "fiscal_year": "FY2022",
-      "revenue": 567.12,
-      "pat": 31.99,
-      "ebitda": 57.58,
-      "debt_to_equity": 0.72
+      "revenue": 654.0,
+      "pat": 31.0,
+      "ebitda": 57.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "orientbell",
       "fiscal_year": "FY2023",
-      "revenue": 621.0,
-      "pat": 35.77,
-      "ebitda": 64.39,
-      "debt_to_equity": 0.72
+      "revenue": 705.0,
+      "pat": 22.0,
+      "ebitda": 47.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "orientbell",
       "fiscal_year": "FY2024",
-      "revenue": 680.0,
-      "pat": 39.98,
-      "ebitda": 71.96,
-      "debt_to_equity": 0.72
+      "revenue": 674.0,
+      "pat": 0.0,
+      "ebitda": 21.0,
+      "debt_to_equity": 0.0
     },
     {
-      "company_id": "hpl",
-      "fiscal_year": "FY2020",
-      "revenue": 810.97,
-      "pat": 36.49,
-      "ebitda": 65.68,
-      "debt_to_equity": 0.88
+      "company_id": "orientbell",
+      "fiscal_year": "FY2025",
+      "revenue": 660.0,
+      "pat": 2.0,
+      "ebitda": 28.0,
+      "debt_to_equity": 0.0
     },
     {
-      "company_id": "hpl",
-      "fiscal_year": "FY2021",
-      "revenue": 901.8,
-      "pat": 41.48,
-      "ebitda": 74.66,
-      "debt_to_equity": 0.88
+      "company_id": "orientbell",
+      "fiscal_year": "FY2026",
+      "revenue": 683.0,
+      "pat": 11.0,
+      "ebitda": 39.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "hpl",
       "fiscal_year": "FY2022",
-      "revenue": 1002.8,
-      "pat": 47.13,
-      "ebitda": 84.83,
-      "debt_to_equity": 0.88
+      "revenue": 1004.0,
+      "pat": 7.0,
+      "ebitda": 116.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "hpl",
       "fiscal_year": "FY2023",
-      "revenue": 1115.11,
-      "pat": 53.53,
-      "ebitda": 96.35,
-      "debt_to_equity": 0.88
+      "revenue": 1215.0,
+      "pat": 28.0,
+      "ebitda": 145.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "hpl",
       "fiscal_year": "FY2024",
-      "revenue": 1240.0,
-      "pat": 60.76,
-      "ebitda": 109.37,
-      "debt_to_equity": 0.88
+      "revenue": 1421.0,
+      "pat": 41.0,
+      "ebitda": 182.0,
+      "debt_to_equity": 0.0
     },
     {
-      "company_id": "kriti",
-      "fiscal_year": "FY2020",
-      "revenue": 290.45,
-      "pat": 20.91,
-      "ebitda": 37.64,
-      "debt_to_equity": 0.95
+      "company_id": "hpl",
+      "fiscal_year": "FY2025",
+      "revenue": 1684.0,
+      "pat": 87.0,
+      "ebitda": 238.0,
+      "debt_to_equity": 0.0
     },
     {
-      "company_id": "kriti",
-      "fiscal_year": "FY2021",
-      "revenue": 311.65,
-      "pat": 22.94,
-      "ebitda": 41.29,
-      "debt_to_equity": 0.95
+      "company_id": "hpl",
+      "fiscal_year": "FY2026",
+      "revenue": 1858.0,
+      "pat": 83.0,
+      "ebitda": 265.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "kriti",
       "fiscal_year": "FY2022",
-      "revenue": 334.4,
-      "pat": 25.15,
-      "ebitda": 45.27,
-      "debt_to_equity": 0.95
+      "revenue": 545.0,
+      "pat": 14.0,
+      "ebitda": 39.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "kriti",
       "fiscal_year": "FY2023",
-      "revenue": 358.81,
-      "pat": 27.56,
-      "ebitda": 49.61,
-      "debt_to_equity": 0.95
+      "revenue": 732.0,
+      "pat": -23.0,
+      "ebitda": -8.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "kriti",
       "fiscal_year": "FY2024",
-      "revenue": 385.0,
-      "pat": 30.18,
-      "ebitda": 54.32,
-      "debt_to_equity": 0.95
+      "revenue": 867.0,
+      "pat": 21.0,
+      "ebitda": 59.0,
+      "debt_to_equity": 0.0
     },
     {
-      "company_id": "manaksia",
-      "fiscal_year": "FY2020",
-      "revenue": 977.33,
-      "pat": 35.18,
-      "ebitda": 63.32,
-      "debt_to_equity": 2.15
+      "company_id": "kriti",
+      "fiscal_year": "FY2025",
+      "revenue": 722.0,
+      "pat": -4.0,
+      "ebitda": 28.0,
+      "debt_to_equity": 0.0
     },
     {
-      "company_id": "manaksia",
-      "fiscal_year": "FY2021",
-      "revenue": 962.67,
-      "pat": 35.43,
-      "ebitda": 63.77,
-      "debt_to_equity": 2.15
+      "company_id": "kriti",
+      "fiscal_year": "FY2026",
+      "revenue": 587.0,
+      "pat": 1.0,
+      "ebitda": 35.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "manaksia",
       "fiscal_year": "FY2022",
-      "revenue": 948.23,
-      "pat": 35.65,
-      "ebitda": 64.17,
-      "debt_to_equity": 2.15
+      "revenue": 63.0,
+      "pat": 8.0,
+      "ebitda": -1.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "manaksia",
       "fiscal_year": "FY2023",
-      "revenue": 934.01,
-      "pat": 35.87,
-      "ebitda": 64.57,
-      "debt_to_equity": 2.15
+      "revenue": 143.0,
+      "pat": 97.0,
+      "ebitda": 6.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "manaksia",
       "fiscal_year": "FY2024",
-      "revenue": 920.0,
-      "pat": 36.06,
-      "ebitda": 64.91,
-      "debt_to_equity": 2.15
+      "revenue": 161.0,
+      "pat": 18.0,
+      "ebitda": 5.0,
+      "debt_to_equity": 0.0
+    },
+    {
+      "company_id": "manaksia",
+      "fiscal_year": "FY2025",
+      "revenue": 166.0,
+      "pat": 6.0,
+      "ebitda": -1.0,
+      "debt_to_equity": 0.0
+    },
+    {
+      "company_id": "manaksia",
+      "fiscal_year": "FY2026",
+      "revenue": 173.0,
+      "pat": 6.0,
+      "ebitda": 2.0,
+      "debt_to_equity": 0.0
     },
     {
       "company_id": "sanghi",
