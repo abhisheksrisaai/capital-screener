@@ -2,6 +2,7 @@ name: Capital Screener Data Refresh
 
 permissions:
   contents: write
+  issues: write
 
 on:
   schedule:
@@ -45,6 +46,10 @@ jobs:
           print(f"OK: {zeros} zero-revenue companies")
           PY
 
+      - name: Prompt-regression evals
+        working-directory: backend
+        run: python -m pytest tests/ -q
+
       - name: Commit processed artifacts
         run: |
           git config user.name "screener-bot"
@@ -52,3 +57,12 @@ jobs:
           git add data/processed/
           git diff --staged --quiet || git commit -m "Data refresh $(date -u +%Y-%m-%d)"
           git push
+
+      - name: File issue on refresh failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Data refresh failed: $(date -u +%Y-%m-%d)" \
+            --body "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}. Check the ingestion log and the zero-revenue guard output." || true
