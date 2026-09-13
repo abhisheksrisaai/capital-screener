@@ -111,6 +111,42 @@ Risk flags are rule-based:
 
 GitHub Action (`.github/workflows/data_refresh.yml`) runs weekdays at 02:00 UTC or on manual dispatch. It re-scrapes Screener.in, downloads PDFs, and commits `data/processed/` artifacts.
 
+## Eval & Numbers
+
+Full method in [`EVAL.md`](EVAL.md). Measured 2026-09-13 (scripts in `evals/`):
+
+| Metric | Value | How measured |
+|---|---|---|
+| Docs ingested | 38 filings / 1260 chunks / 18 companies (16 real, 2 seed) | `evals/metrics.py` over `data/processed/` |
+| Financial rows | 90 (FY2020–FY2026) | `financials.json` count |
+| Retrieval latency | avg 4.69 ms, p95 4.79 ms | 30 qa_set queries, local TF-IDF + Qdrant (excludes Groq generation) |
+| Cost per query | approx. $0.000040 at list pricing; observed $0 (Groq free tier) | ~554 measured input tokens × $0.05/1M in + ~150 out × $0.08/1M |
+| Refresh time | avg 4.5 min over last 6 scheduled runs (all green) | GitHub Actions history |
+| Citation precision | 0.60 overall — factual 10/10, numerical 2/10, cross-year 6/10 | `evals/eval_citation.py`, page-level match |
+
+Known gap: number questions against the two long real PDFs miss, because TF-IDF ranks overview pages when the target figure is not in the query. CI gate (≥ 0.50) locks current behavior; planned fix is SQL-first routing for number questions.
+
+## Failure Cases
+
+Two real bugs, both visible in commit history:
+
+1. **Seed PDFs extracted as unreadable text.** Generated filings came out of PyMuPDF as mojibake/empty, so RAG chunks — and therefore Q&A citations — were garbage.
+   Changed: fixed the text-encoding path in the seed PDF writer, and split each filing into one page per section (overview / performance / risks / governance) so risk passages retrieve independently.
+   Before: excerpts unreadable. After: clean section-aligned chunks, verifiable in `chunks_manifest.json`.
+
+2. **A decommissioned Groq model name 500'd the demo.** `ask` and `memo` hard-depended on one model; when Groq retired it, every answer failed.
+   Changed: `FALLBACK_MODELS` chain in `backend/app/services/llm_service.py` (`llama-3.1-8b-instant` → larger fallbacks) plus a `max_tokens` / `max_completion_tokens` compatibility shim.
+   Before: any model retirement = 500s. After: degrades across models; 503 only if all fail.
+
+## Data Contract
+
+| Area | Contract |
+|---|---|
+| Input schema | `data/config/universe.json` → per company per year: `revenue`, `ebitda`, `pat`, `debt_to_equity` (Rs crore, ratios). Scrape-first; seed-profile fallback when scrape is blocked or maps revenue as 0. |
+| Provenance | Every company carries `data_source`: `real`, `hybrid`, or `seed`, surfaced in the dashboard. |
+| Missing year data | Endpoints return available years sorted ascending; ranking uses the latest year only. Out-of-range years are eval-covered: the model must abstain (`evals/qa_set.jsonl` unanswerables). |
+| Refresh failure | Zero-revenue guard refuses the commit when > 3 companies report Rs 0. Any job failure auto-files a GitHub issue with the run link (`File issue on refresh failure` step). |
+
 ## Project Structure
 
 ```

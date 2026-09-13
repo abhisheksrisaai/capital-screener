@@ -1,0 +1,20 @@
+{
+  "companies": 18,
+  "filings": 38,
+  "chunks": 1260,
+  "financial_rows": 90,
+  "real_sources": 16,
+  "seed_sources": 2,
+  "qa_items": 40,
+  "db_companies": 18,
+  "db_financials": 90,
+  "db_filings": 36,
+  "reembed_seconds": 1.3,
+  "rebuilt_chunks": 1260,
+  "retrieval_avg_ms": 4.69,
+  "retrieval_p95_ms": 4.79,
+  "retrieval_n": 30,
+  "avg_context_chars": 1619,
+  "approx_input_tokens_per_query": 554,
+  "approx_cost_per_query_usd": 4e-05
+}
