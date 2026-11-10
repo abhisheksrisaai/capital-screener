@@ -17,19 +17,11 @@
       "page_count": 191
     },
     {
-      "company_id": "macpower",
-      "title": "Annual Report 2024",
-      "fiscal_year": "FY2024",
-      "pdf_path": "data/raw/macpower/macpower_FY2024.pdf",
-      "pdf_hash": "12ae273a5f65ab70a094619a6d6f4e2caed47cecdfcee156c0b90815d8d95d51",
-      "page_count": 170
-    },
-    {
       "company_id": "ganecos",
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/ganecos/ganecos_FY2024.pdf",
-      "pdf_hash": "f73d8297b9799f9467d37c093a059b303195531950968fce0543ba5f5ead4565",
+      "pdf_hash": "70ba5483daf019825e761acac917e08ac77b4b15e3abd7d270636c96667bddd6",
       "page_count": 4
     },
     {
@@ -37,7 +29,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/ganecos/ganecos_FY2023.pdf",
-      "pdf_hash": "3fcffd7a213c65a56554f1b70a98a0da3201ce4418e230cd38ceb8f832bfc107",
+      "pdf_hash": "688b182870528b9f1a1480739820251e23583b07ff0cdc39f0e48dae50ad3e4c",
       "page_count": 4
     },
     {
@@ -45,7 +37,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/gandhitube/gandhitube_FY2024.pdf",
-      "pdf_hash": "86063763f0b43425584575baf901ebd457f7d1f73a020c33495cd42f1a05f936",
+      "pdf_hash": "5eece5b344748e0fc3b15b8c06686b2e76d655a0aaf52279da1f2fc0c8927a6e",
       "page_count": 4
     },
     {
@@ -53,7 +45,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/gandhitube/gandhitube_FY2023.pdf",
-      "pdf_hash": "d8b63102b0925fef68f13d815bbcfd88c6dbabe949f298236472929069a85283",
+      "pdf_hash": "4ba05c429308b0aad896defc1b472309222e0dc31a2781d02fcbb0105521b34d",
       "page_count": 4
     },
     {
@@ -85,7 +77,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/softtech/softtech_FY2024.pdf",
-      "pdf_hash": "49d50e1e3f7b02c35be07353d1e643aa26a7389aced2f6afd87266cf2e36f49a",
+      "pdf_hash": "42436ac63541b0d6c3c1a5e96ea04a2cfdddfe195850fd51c9d03c4d14435891",
       "page_count": 4
     },
     {
@@ -93,7 +85,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/softtech/softtech_FY2023.pdf",
-      "pdf_hash": "5a6d38f9bf525b339ca9243c09f7fb0eb6e25ae19a97999ae4fe864823ddbb03",
+      "pdf_hash": "19061f7229fb1dec0439abcd57f3c4f78ee1aa979fde0bf876c2d8618aedd867",
       "page_count": 4
     },
     {
@@ -101,7 +93,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/sbal/sbal_FY2024.pdf",
-      "pdf_hash": "f55c0e28bf25795ae057b226a6130c321b1f52d308cfc260882123d2f66ce62d",
+      "pdf_hash": "573c9961557157c19989c73d20ec9924b4ddb5828f4e919834a18c0a3ef29f98",
       "page_count": 4
     },
     {
@@ -109,7 +101,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/sbal/sbal_FY2023.pdf",
-      "pdf_hash": "fef4f8f3738547ed2a18ef53adae4512585579de94b7d933b892f72f789f8df2",
+      "pdf_hash": "d4332b48e880bc3104bc1ce7bfe1f9b9974c25e91c8a276e398cfd1338883aa8",
       "page_count": 4
     },
     {
@@ -117,7 +109,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/jayagrogn/jayagrogn_FY2024.pdf",
-      "pdf_hash": "28d4a34f3aec6948e8f66f25997f6c5c9e14e3c8de7c51a2d1d8c58c711682de",
+      "pdf_hash": "c575506ca364006816e42b66de4f3c8923e3b77e4679bee1e0e114937665d620",
       "page_count": 4
     },
     {
@@ -125,7 +117,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/jayagrogn/jayagrogn_FY2023.pdf",
-      "pdf_hash": "dcb93956007684ee1c4a1585d478271c793d0ea66cca0f830f057990c28b2dc5",
+      "pdf_hash": "2675f75f377502266d780b7395b343b516da9dccf85ba5c29cde83443090e3b3",
       "page_count": 4
     },
     {
@@ -133,7 +125,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/shivalik/shivalik_FY2024.pdf",
-      "pdf_hash": "f0ecbcd6bb430b5eb795cfaa90e6d781d86c078f48d4d7726fabed20175b9337",
+      "pdf_hash": "2b693af2b8835e930506c343e608c3ab51dabf57b8de3124d64d544ace77b9fa",
       "page_count": 4
     },
     {
@@ -141,7 +133,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/shivalik/shivalik_FY2023.pdf",
-      "pdf_hash": "8381b3c45f22a1eeb28ba2dd20ed1574da69f7a8eb52eaf854ed6c3aa253966c",
+      "pdf_hash": "8fdce2ddd2ba9a8713137314c3616ac07391718e94d530916633a728019bbfea",
       "page_count": 4
     },
     {
@@ -149,7 +141,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/dynemic/dynemic_FY2024.pdf",
-      "pdf_hash": "0187289fa3c6d87d819ee5385bc0bb4a763da9d596dd3e35d5e5dbeae35e7074",
+      "pdf_hash": "130fbb23bc1c3d8d7cd4b18063bdd3e89413d5d16b42456d21823a602fba18ac",
       "page_count": 4
     },
     {
@@ -157,7 +149,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/dynemic/dynemic_FY2023.pdf",
-      "pdf_hash": "1eb4fca7062bfb7596c62506d1ded32ab8e8771c01328121c7557967a2767483",
+      "pdf_hash": "634d1d9c27f9803b9bd7153ea227980df844698fb8af143519f5ae8865101e76",
       "page_count": 4
     },
     {
@@ -165,7 +157,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/nibe/nibe_FY2024.pdf",
-      "pdf_hash": "ed4fa21fce18ab37cc1eb251ee8d1e453ef4480415a78f203acbb314f410e949",
+      "pdf_hash": "9457a3d453e2106d6d647cfe274a9a26e9ee8d8eaeefe0181108eb8e6bdbef5f",
       "page_count": 4
     },
     {
@@ -173,7 +165,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/nibe/nibe_FY2023.pdf",
-      "pdf_hash": "d6a49d6f1ea22719a5f8d2d798c84cba7c2e9670c20e16be7e5dcbc8900a42d3",
+      "pdf_hash": "39a547191bb8ffb818f2caef9f8ff2b91a2bf7def9bdbc6743b4f602402d6a09",
       "page_count": 4
     },
     {
@@ -181,7 +173,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/orientbell/orientbell_FY2024.pdf",
-      "pdf_hash": "00831ad2bd1dea5b1fe4f209e3342198c56c69e3e9ca565b86cb3fcf329d38e2",
+      "pdf_hash": "0dab62669fe80b73089960da4132b1765137cf224c6dac6e4383a422b6bcaa05",
       "page_count": 4
     },
     {
@@ -189,7 +181,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/orientbell/orientbell_FY2023.pdf",
-      "pdf_hash": "44f36a2de26496013e58332ee99e1cd5bd1a3d00df75f9fc881f2fb1cf853ede",
+      "pdf_hash": "02c4188f43472834c1a2c08e7d43f313dc3ec4d56eb62b1d5871497ef54d822e",
       "page_count": 4
     },
     {
@@ -197,7 +189,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/hpl/hpl_FY2024.pdf",
-      "pdf_hash": "173c655b576f5c736bd92b45151e682f1f84331d2c8e8024de20576966443775",
+      "pdf_hash": "1bab114d3df19aa27c90e8a3d292c435f7254be20553a30541c12a06abc7343c",
       "page_count": 4
     },
     {
@@ -205,7 +197,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/hpl/hpl_FY2023.pdf",
-      "pdf_hash": "5123ef57ad807eec75fa8c2cff72ba789f99b4e50616c3f9c59c8af42ff5deb5",
+      "pdf_hash": "bc04cc55290989ab58f86b9c2a4de8c06867ded2e3161e7a91352b28b912201a",
       "page_count": 4
     },
     {
@@ -213,7 +205,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/kriti/kriti_FY2024.pdf",
-      "pdf_hash": "59a2ffc4fed498f0d32bdaf403bc8f488cd016124b17d4779d67c7c81be69714",
+      "pdf_hash": "00a2f475cd7746421a1952c81705cab6e70c9bbcf4bae49e3545ab622d1a91f3",
       "page_count": 4
     },
     {
@@ -221,7 +213,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/kriti/kriti_FY2023.pdf",
-      "pdf_hash": "432892a937bb624670c62f51cf93f54710ce35b9ccd4996790b50e6069918fa2",
+      "pdf_hash": "576e15ec26b12e287dc1032cd5c2eec78173e95ba62958509e966291b52305d4",
       "page_count": 4
     },
     {
@@ -229,7 +221,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/manaksia/manaksia_FY2024.pdf",
-      "pdf_hash": "2a21b1ea3d525968250e1b292823c8457c124c78acb7d83092fb137b5a922f53",
+      "pdf_hash": "cb6ea9a24050207feb5e8af1fae97a81c1a095cc673078132eac30ecc02f8cef",
       "page_count": 4
     },
     {
@@ -237,7 +229,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/manaksia/manaksia_FY2023.pdf",
-      "pdf_hash": "2ac29a9fdeff822e955ceeb3ab3d7590828ea49d06cc8889d307797a74f5960d",
+      "pdf_hash": "cacbf123f111ba3a14ad5f886ee06dba56a1c57eaddc2b573ece610eb573060e",
       "page_count": 4
     },
     {
@@ -245,7 +237,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/sanghi/sanghi_FY2024.pdf",
-      "pdf_hash": "982a5df16326c745ec3091721018bff3ca9dd187f2425b2be6b48666ca82b71e",
+      "pdf_hash": "80a4bfb0130eb9105effce1a053bbfd29ef6fbd8f6b3ed5fa758b691c72fc2c6",
       "page_count": 4
     },
     {
@@ -253,7 +245,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/sanghi/sanghi_FY2023.pdf",
-      "pdf_hash": "06ff81c74800bfc43824b669ae4434d163cd6262c1578f441d46a1afde3520ae",
+      "pdf_hash": "b8777cb1327071e77214fec842836a81017b5723eec5fb5a6994a16787ceddce",
       "page_count": 4
     },
     {
@@ -285,7 +277,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/vishnu/vishnu_FY2024.pdf",
-      "pdf_hash": "ffe11b649c80d8dae0750c108ddebb91679677d61682f4ea08247d8386e588d7",
+      "pdf_hash": "ffdea9503cfd56db70dcbfb28447d777083c112a70eafe3ef410d177e5119877",
       "page_count": 4
     },
     {
@@ -293,7 +285,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/vishnu/vishnu_FY2023.pdf",
-      "pdf_hash": "e7e07ce69f297006e6f95e7fda1d8015447d3860c3f0805f9810786406de8fc2",
+      "pdf_hash": "126177ef5d9630d1ce06f80c5514cfa690ee60df067f034cd35cbefbf2e3a462",
       "page_count": 4
     },
     {
@@ -301,7 +293,7 @@
       "title": "Annual Report FY2024",
       "fiscal_year": "FY2024",
       "pdf_path": "data/raw/automotive/automotive_FY2024.pdf",
-      "pdf_hash": "cb2e4aceb6434b6074393cf1fb14d168eba69714aa0f73d14a1a0bfb10a1155c",
+      "pdf_hash": "4c22ea86bf37de6f49e22bd4e9e5542e65b5531878fcee75c625609c26f08837",
       "page_count": 4
     },
     {
@@ -309,7 +301,7 @@
       "title": "Annual Report FY2023",
       "fiscal_year": "FY2023",
       "pdf_path": "data/raw/automotive/automotive_FY2023.pdf",
-      "pdf_hash": "55cdd1cffea9b1293e04335db886521673b80f2955c379603ed83073b54238cd",
+      "pdf_hash": "fd108ea4d02d56e93a2c487cac394498319a4a1249e186783158d4b954628df9",
       "page_count": 4
     }
   ]
