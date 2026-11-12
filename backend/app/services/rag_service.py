@@ -118,14 +118,23 @@ class RAGService:
         return len(points)
 
     def search(self, company_id: str, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
+        return self.search_all(query, top_k=top_k, company_id=company_id)
+
+    def search_all(
+        self, query: str, top_k: int = 5, company_id: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
+        """Search across the filing corpus, optionally scoped to one company."""
         self.ensure_collection()
         embedding = self.generate_embedding(query)
+        query_filter = None
+        if company_id:
+            query_filter = Filter(
+                must=[FieldCondition(key="company_id", match=MatchValue(value=company_id))]
+            )
         results = self.qdrant.search(
             collection_name=COLLECTION_NAME,
             query_vector=embedding,
-            query_filter=Filter(
-                must=[FieldCondition(key="company_id", match=MatchValue(value=company_id))]
-            ),
+            query_filter=query_filter,
             limit=top_k,
         )
         hits = []
@@ -134,6 +143,7 @@ class RAGService:
             hits.append(
                 {
                     "score": hit.score,
+                    "company_id": payload.get("company_id", ""),
                     "doc_title": payload.get("doc_title", ""),
                     "page": payload.get("page", 0),
                     "filing_year": payload.get("filing_year", ""),

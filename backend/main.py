@@ -6,6 +6,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.routes.analytics import router as analytics_router
 from app.api.routes.companies import router
 from app.core.config import settings
 from app.db.seed import seed_if_empty
@@ -47,6 +48,7 @@ app.add_middleware(
 )
 
 app.include_router(router)
+app.include_router(analytics_router)
 
 
 @app.get("/")

@@ -97,6 +97,44 @@ class LLMService:
         )
         return self._call(system, user, max_tokens=250)
 
+    def answer_analytics(
+        self,
+        question: str,
+        draft: str,
+        facts: List[Dict[str, Any]],
+        filing_hits: Optional[List[Dict[str, Any]]] = None,
+        history: Optional[List[Dict[str, str]]] = None,
+    ) -> str:
+        """Rewrite a computed answer without allowing new numbers or claims."""
+        fact_text = "\n".join(
+            f"- {fact.get('label')}: {fact.get('value')} ({fact.get('detail', '')})"
+            for fact in facts
+        ) or "- No computed facts."
+        excerpts = "\n\n".join(
+            f"[{hit.get('doc_title', 'Filing')}, p.{hit.get('page', '?')}]\n"
+            f"{_sanitize(str(hit.get('excerpt', '')), 1200)}"
+            for hit in (filing_hits or [])[:3]
+        )
+        turns = "\n".join(
+            f"{message.get('role', 'user')}: {_sanitize(str(message.get('content', '')), 500)}"
+            for message in (history or [])[-4:]
+        )
+        system = (
+            "You are the analyst inside Capital Screener. Answer ONLY with the supplied "
+            "computed facts and filing excerpts. Never invent or change a number, company, "
+            "or date. Preserve exact figures. Cite filing excerpts as [title, p.X]. "
+            "Write 2-3 short sentences under 110 words. If the facts do not cover the "
+            "question, say what the dataset is missing instead of guessing."
+        )
+        user = (
+            f"Computed facts:\n{fact_text}\n\n"
+            f"Draft answer (already grounded):\n{_sanitize(draft, 1200)}\n\n"
+            f"Filing excerpts:\n{excerpts or 'None retrieved.'}\n\n"
+            f"Recent conversation:\n{turns or 'None.'}\n\n"
+            f"Question: {_sanitize(question, 400)}"
+        )
+        return self._call(system, user, max_tokens=300)
+
     def summarize_risks(self, company: Dict[str, Any], sources: List[Dict[str, Any]]) -> str:
         context = "\n".join(_sanitize(str(s.get("excerpt", "")), 800) for s in sources[:4])
         system = "List 2-3 key investment risks as bullet points based on filings and KPIs."

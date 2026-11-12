@@ -61,6 +61,32 @@ npm run dev
 
 Open http://localhost:5173
 
+## Analytics Workspace
+
+The frontend is a five-page research workspace built around a single derived analytics payload:
+
+- **Market overview** (`/`) — KPI band, balanced-panel trajectory, sector mix, risk map, screen ranking, and data-health/provenance panels.
+- **Screener** (`/screener`) — search, sector/risk/growth filters, sortable financial columns, five-year sparklines, and CSV export.
+- **Data room** (`/data`) — corpus inventory, filing-coverage matrix, financial coverage, provenance split, and refresh contract.
+- **Ask Capital** (`/ask`) — grounded Q&A over the same financials and filing excerpts, with computed facts, charts, citations, and follow-ups.
+- **Company detail** (`/company/:id`) — revenue/margin history, sector position and peers, filings, score anatomy, scoped chat, and printable memo.
+
+Every page supports light and dark themes. The desktop sidebar and mobile header toggle immediately, the chosen theme persists in `localStorage`, and a first visit follows the operating system's `prefers-color-scheme` setting.
+
+`GET /api/analytics/overview` computes the whole payload server-side (KPIs, balanced panel, sector aggregates, risk concentration, coverage, provenance, signals). `POST /api/analytics/ask` routes a question through a structured intent engine first; Groq is used only to polish the narrative when configured. The engine abstains on share prices, valuation multiples, news, and recommendations because those datasets are not committed.
+
+### State models
+
+Async UI flows use small pure reducers in [`frontend/src/state/`](frontend/src/state/README.md), with request IDs and abort signals so a late response cannot overwrite newer state.
+
+- Refreshing the overview keeps the last good snapshot and marks it stale.
+- Clearing chat or changing company aborts the in-flight answer.
+- Retrying a failed question reuses it without duplicating the transcript.
+- Screener filters and sorting live in the URL, so they survive reloads and sharing.
+- Every machine exposes a stable `data-*` state and a live region for assistive tech and agents.
+
+Run the transition tests with `cd frontend && npm test`.
+
 ## Docker
 
 ```bash
@@ -81,6 +107,9 @@ docker compose up --build
 | `GET /api/ranking` | Explainable ranked list |
 | `POST /api/companies/{id}/ask` | RAG Q&A with source citations |
 | `POST /api/companies/{id}/memo` | Generate investment memo PDF |
+| `GET /api/analytics/overview` | Derived KPIs, balanced series, sectors, risk, coverage, provenance, signals |
+| `GET /api/analytics/coverage` | Coverage, dataset inventory, and provenance slice |
+| `POST /api/analytics/ask` | Grounded universe/company Q&A with facts, charts, and citations |
 
 ## Ranking Logic
 
@@ -146,13 +175,21 @@ Two real bugs, both visible in commit history:
 | Provenance | Every company carries `data_source`: `real`, `hybrid`, or `seed`, surfaced in the dashboard. |
 | Missing year data | Endpoints return available years sorted ascending; ranking uses the latest year only. Out-of-range years are eval-covered: the model must abstain (`evals/qa_set.jsonl` unanswerables). |
 | Refresh failure | Zero-revenue guard refuses the commit when > 3 companies report Rs 0. Any job failure auto-files a GitHub issue with the run link (`File issue on refresh failure` step). |
+| Derived analytics | KPIs, balanced panels, sector aggregates, risk concentration, and signals are computed from committed financials at request time. The chat narrative may be LLM-polished, but numbers always come from the analytics service. |
+| Answer scope | Share prices, market cap, valuation multiples, dividends, news, promoter holding, and buy/sell calls are outside the committed datasets; the answer engine refuses rather than guessing. |
 
 ## Project Structure
 
 ```
 capital-screener/
+├── .agents/skills/   # Installed UI/design skills (frontend-design, improve-ui, animations, polish)
 ├── backend/          # FastAPI + ingest pipeline
-├── frontend/         # React dashboard
+│   └── app/services/ # analytics_service.py (derived metrics + grounded answer engine)
+├── frontend/         # React/Vite analytics workspace
+│   └── src/
+│       ├── components/  # AppShell, ChatPanel, shared UI
+│       ├── pages/       # Overview, Screener, Data room, Ask, Company detail
+│       └── lib/         # formatters, sector colors, CSV exports
 ├── data/
 │   ├── config/       # Company universe
 │   └── processed/    # Committed structured JSON + chunk manifest

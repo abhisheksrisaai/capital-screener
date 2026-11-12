@@ -3,9 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capital Screener</title>
+    <meta id="theme-color" name="theme-color" content="#F6F6F2" />
+    <meta
+      name="description"
+      content="Capital Screener — financial analytics and filing intelligence for 18 BSE-listed Indian SMEs."
+    />
+    <script>
+      (function () {
+        var stored = null;
+        try {
+          stored = window.localStorage.getItem('capital-screener-theme');
+        } catch (error) {
+          // A blocked storage API should not prevent the system theme from applying.
+        }
+        var dark =
+          stored === 'dark' ||
+          (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#0F1110' : '#F6F6F2');
+      })();
+    </script>
+    <title>Capital Screener — Market overview</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>

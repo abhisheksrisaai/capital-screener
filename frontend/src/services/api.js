@@ -10,7 +10,7 @@ const client = axios.create({
 export function apiErrorMessage(err, fallback = 'Request failed') {
   const status = err?.response?.status;
   if (status === 503 || status === 504 || /status code 503/i.test(err?.message || '')) {
-    return 'Memo generation is busy — try again in a moment.';
+    return 'The service is busy — try again in a moment.';
   }
   const data = err?.response?.data;
   if (typeof data === 'string' && data.trim()) return data;
@@ -37,13 +37,13 @@ export async function getSectors() {
   return data.sectors;
 }
 
-export async function getCompany(id) {
-  const { data } = await client.get(`/api/companies/${id}`);
+export async function getCompany(id, { signal } = {}) {
+  const { data } = await client.get(`/api/companies/${id}`, { signal });
   return data;
 }
 
-export async function getFinancials(id) {
-  const { data } = await client.get(`/api/companies/${id}/financials`);
+export async function getFinancials(id, { signal } = {}) {
+  const { data } = await client.get(`/api/companies/${id}/financials`, { signal });
   return data.financials;
 }
 
@@ -52,13 +52,38 @@ export async function getRanking() {
   return data.ranking;
 }
 
+export async function getAnalyticsOverview({ signal } = {}) {
+  const { data } = await client.get('/api/analytics/overview', { signal });
+  return data;
+}
+
+export async function askAnalytics(
+  question,
+  { companyId = null, history = [], signal } = {},
+) {
+  const { data } = await client.post(
+    '/api/analytics/ask',
+    {
+      question,
+      company_id: companyId,
+      history,
+    },
+    { signal },
+  );
+  return data;
+}
+
 export async function askQuestion(id, question) {
   const { data } = await client.post(`/api/companies/${id}/ask`, { question });
   return data;
 }
 
-export async function downloadMemo(id) {
-  const response = await client.post(`/api/companies/${id}/memo`, {}, { responseType: 'blob' });
+export async function downloadMemo(id, { signal } = {}) {
+  const response = await client.post(
+    `/api/companies/${id}/memo`,
+    {},
+    { responseType: 'blob', signal },
+  );
   const type = response.headers['content-type'] || '';
   if (type.includes('application/json')) {
     const text = await response.data.text();
