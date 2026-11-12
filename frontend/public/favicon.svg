@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Capital Screener</title>
+  <defs>
+    <clipPath id="tile">
+      <rect width="64" height="64" rx="18" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="64" height="64" fill="#151610" />
+    <rect width="64" height="2" fill="#F6F6F2" opacity="0.2" />
+    <rect x="17" y="32" width="6" height="16" rx="3" fill="#F6F6F2" opacity="0.5" />
+    <rect x="29" y="20" width="6" height="28" rx="3" fill="#F6F6F2" opacity="0.8" />
+    <rect x="41" y="8" width="6" height="40" rx="3" fill="#F6F6F2" />
+  </g>
+</svg>
